@@ -42,6 +42,7 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   display: flex;
   justify-content: center;
   align-items: center;
+  color:var(--s-4e4e4e);
 }
 .tab-line-box {
   position: absolute;
@@ -251,6 +252,7 @@ td[hu="1"] {
   align-items: center;
   margin-top:10px;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+  color:var(--s-4e4e4e);
 }
 .data-csv-table label {
   width:100%;
@@ -285,6 +287,7 @@ td[hu="1"] {
   transform:translateX(-50%);
   margin-top:10px;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
+  color:var(--s-4e4e4e);
 }
 .drawlotsresult {
   width:clamp(120px,90%,250px);
@@ -306,8 +309,9 @@ td[hu="1"] {
   box-sizing: border-box;
   padding:10px;
   border:none;
-  background:#f5f5f5;
+  background:var(--s-f5f5f5);
   border-radius:15px;
+  color:var(--s-4e4e4e);
 }
 .fontsize {
   width:clamp(120px,90%,250px);
@@ -341,6 +345,7 @@ td[hu="1"] {
   height:35px;
   display: flex;
   align-items: center;
+  color:var(--s-4e4e4e);
 }
 .savedlistpreviewbox {
   position:absolute;
@@ -357,6 +362,7 @@ td[hu="1"] {
   width:100%;
   display: flex;
   align-items: center;
+  color:var(--s-4e4e4e);
 }
 </style>
 <style>
@@ -659,7 +665,7 @@ function osaved() {
   }
   $('.savedss').html(sdhtm.join(''))
     
-    ripple(sdrpid.join(','), "#000", "0.3", 888, "true");
+    ripple(sdrpid.join(','), "var(--s-4e4e4e)", "0.3", 888, "true");
   
 }
 
@@ -820,7 +826,7 @@ reader.onload = function(e){
   
   $('.data-csv-table table').html(ht[0])
   
-  ripple('.csvselectbtn[vg="' + ht[1] + '"]', "#000", "0.3", 888, "false");
+  ripple('.csvselectbtn[vg="' + ht[1] + '"]', "var(--s-4e4e4e)", "0.3", 888, "false");
   
 };
 reader.readAsText( theFile, "utf-8" )
@@ -833,7 +839,7 @@ reader.readAsText( theFile, "utf-8" )
   reader.readAsBinaryString(f);
 }
 
-ripple('.tab-btn,.drawlotsbtn,.save,.filebtn', "#000", "0.3", 888, "true");
+ripple('.tab-btn,.drawlotsbtn,.save,.filebtn', "var(--s-4e4e4e)", "0.3", 888, "true");
 
 printData()
 setData()
