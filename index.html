@@ -1,6 +1,6 @@
 <head>
 <meta charset="UTF-8">
-<title>Password Generator</title>
+<title>Draw Lots</title>
 <meta name="description" content="Password Generator - Generate strong passwords">
 <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
 <link href="https://erichsia7.github.io/pwdgen2/pwaicon2/512x512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
@@ -13,6 +13,352 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
+<style>
+* {
+  -webkit-appearance:none;
+outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
+  font-family: "Noto Sans TC", sans-serif;
+}
+.tab {
+  width: 100%;
+  height: 45px;
+  background: #fff;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  border-bottom: 1px solid #f5f5f5;
+}
+.tab-btn {
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.tab-btn-b {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-line-box {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+}
+.tab-line-box2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 2px;
+  width: calc(100% / 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tab-line {
+  width: 30px;
+  height: 2px;
+  background: #000;
+  border-radius: 15px 15px 0px 0px;
+}
+.content-box {
+  position: fixed;
+  top: 45px;
+  height: calc(100% - 45px);
+  left: 0px;
+  width: 100%;
+  overlow: hidden;
+  background: #fff;
+}
+.content-box2 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 300%;
+  height: 100%;
+}
+.content {
+  position: absolute;
+  top: 0px;
+  left: calc(100% / 3 * 0);
+  width: calc(100% / 3);
+  height: 100%;
+  overflow:scroll
+}
+.center {
+  
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+.dbox {
+  width:clamp(120px,90%,250px);
+  height:45px;
+  margin-top: 20px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.save {
+  width:45px;
+  height:45px;
+  background:#f5f5f5;
+  border-radius:15px;
+  margin-left:5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.save svg {
+  width:35px;
+  height:35px;
+}
+.save[sv="0"] #savedicon {
+  display:none;
+}
+.save[sv="0"] #saveicon {
+  display:block;
+}
+.save[sv="1"] #savedicon {
+  display:block;
+}
+.save[sv="1"] #saveicon {
+  display:none;
+}
+.dtabbox {
+  width: 100%;
+  height: 45px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+}
+.dtabbox[cx="option"] {
+  width:clamp(120px,90%,250px);
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:20px;
+}
+.dtabboxff {
+  width:calc(100% - 50px);
+}
+.dtab {
+  width: calc(100% / 2);
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.dtab::after {
+  content: var(--text-d);
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: rgba(0, 0, 0, 0);
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+}
+.dtab[gj="1"]::after {
+  background: #e3e3e3;
+  color: #333;
+}
+
+textarea {
+  width:clamp(120px,90%,250px);
+  box-sizing: border-box;
+  height:250px;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  background:#f5f5f5;
+  border-radius:15px;
+  font-size:15px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-bottom:100px
+}
+.data-csv-table {
+  width:clamp(120px,90%,250px);
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+  margin-bottom:100px;
+}
+tbody {
+  padding:0px;
+  margin:0px;
+}
+.table-box {
+  width:100%;
+  height:auto;
+  overflow-x:scroll;
+}
+table {
+  border:1px solid #e3e3e3;
+  width:auto;
+  min-width:100%;
+  box-sizing: border-box;
+  height:auto;
+  padding:0px;
+  margin:0px;
+  margin-top:10px;
+  border-radius:15px;
+}
+td {
+  box-sizing: border-box;
+  padding:10px;
+  margin:0px;
+  border-right:1px solid #e3e3e3;
+  border-bottom:1px solid #e3e3e3;
+}
+tr:nth-last-child(1) td {
+  border-bottom:none;
+}
+tr td:nth-last-child(1) {
+  border-right:none;
+}
+td[hu="1"] {
+  padding:0px;
+}
+
+.filebtn {
+  width:100%;
+  height:45px;
+  background:#f5f5f5;
+  border-radius:15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:10px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.data-csv-table label {
+  width:100%;
+  height:45px;
+  padding:0px;
+  margin:0px;
+  
+}
+.data-csv-table label input {
+  display:none;
+}
+.csvselectbtn {
+  background:#f5f5f5;
+  padding:5px;
+  border-radius:10px;
+  margin:3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.drawlotsbtn {
+  height:45px;
+  width:clamp(120px,90%,250px);
+  background:#f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius:15px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:10px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.drawlotsresult {
+  width:clamp(120px,90%,250px);
+  height:150px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:20px;
+  font-size:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+}
+#fontsizeinput {
+  width:100%;
+  height:40px;
+  margin-top:10px;
+  box-sizing: border-box;
+  padding:10px;
+  border:none;
+  background:#f5f5f5;
+  border-radius:15px;
+}
+.fontsize {
+  width:clamp(120px,90%,250px);
+  height:40px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+}
+.savedss {
+  width:clamp(120px,90%,250px);
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin-top:10px;
+  display:none;
+}
+.savedlist {
+  width:100%;
+  height:120px;
+  background:#f5f5f5;
+  border-radius:15px;
+  position:relative;
+  margin-top:10px;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.savedtitle {
+  position:absolute;
+  top:10px;
+  left:10px;
+  width:calc(100% - 20px);
+  height:35px;
+  display: flex;
+  align-items: center;
+}
+.savedlistpreviewbox {
+  position:absolute;
+  top:45px;
+  left:10px;
+  width:calc(100% - 20px);
+  height:calc(100% - 45px - 10px);
+}
+.savedlistpreviewbox li {
+  list-style:none;
+  margin:0px;
+  padding:0px;
+  height:calc(100% / 3);
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+</style>
 <body>
 <div class="content-box">
   <div class="content-box2">
