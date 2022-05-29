@@ -1,0 +1,473 @@
+<head>
+<meta charset="UTF-8">
+<title>Password Generator</title>
+<meta name="description" content="Password Generator - Generate strong passwords">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=0" />
+<link href="https://erichsia7.github.io/pwdgen2/pwaicon2/512x512.png" sizes="512x512" rel="apple-touch-icon-precomposed" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" kji="light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1a1a" kji="dark">
+<link rel="manifest" href="https://erichsia7.github.io/pwdgen2/manifest.json?e1">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="content-box">
+  <div class="content-box2">
+    <div class="content">
+      <div class="dbox">
+      <div class="dtabbox dtabboxff" cx="data">
+        <div class="dtab" style="--text-d: 'Text';" gj="1" fd="text" cx="data"></div>
+        <div class="dtab" style="--text-d: 'CSV';" gj="0" fd="csv" cx="data"></div>
+      </div>
+      <div class="save" sv="0" ripple-onclick="save()"></div>
+</div>
+      <textarea id="data-text" placeholder="One draw per line"></textarea>
+      <div class="data-csv-table">
+        <label for="csvfile">
+<input type="file" id="csvfile" name="csvfile" accept=".csv">
+        <div class="filebtn">Open File</div>
+        </label>
+        <div class="table-box">
+      <table></table>
+          </div>
+      </div>
+      
+    </div>
+    <div class="content" style="left:calc(100% / 3 * 1)">
+      
+      <div class="drawlotsresult">Press the button to draw lots.</div>
+      
+      <div class="drawlotsbtn" ripple-onclick="drawlots()">Draw lots</div>
+    </div>
+    <div class="content" style="left:calc(100% / 3 * 2)">
+      
+     
+      <div class="dtabbox" cx="option">
+        <div class="dtab" style="--text-d: 'Font size';" gj="1" wd="fontsize" cx="option"></div>
+        <div class="dtab" style="--text-d: 'Saved';" gj="0" wd="saved" cx="option"></div>
+      </div>
+        
+        <div class="fontsize">
+        <input type="text" placeholder="Font size" id="fontsizeinput">
+        </div>
+        
+      <div class="savedss"></div>
+      
+    </div>
+  </div>
+</div>
+<div class="tab">
+  <div class="tab-btn" s="data">
+    <div class="tab-btn-b">Data</div>
+  </div>
+  <div class="tab-btn" s="drawlots">
+    <div class="tab-btn-b">Draw lots</div>
+  </div>
+  <div class="tab-btn" s="option">
+    <div class="tab-btn-b">Option</div>
+  </div>
+  <div class="tab-line-box">
+    <div class="tab-line-box2">
+      <div class="tab-line"></div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+<script>
+function ripple(select, color, opacity, time, removewh) {
+  $(select).on("click", function (eee) {
+    if (removewh === "true") {
+      $(this).css({ width: "", height: "" });
+    }
+    var ogstyle = $(this).attr("style");
+
+    var ppchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+    var ppid = "";
+    for (var i = 0; i < 16; i++) {
+      var randomNumber = Math.floor(Math.random() * ppchars.length);
+      ppid += ppchars.substring(randomNumber, randomNumber + 1);
+    }
+
+    var ppcharsa = "0123456789abcdefghijklmnopqrstuvwxyz";
+    var ppida = "";
+    for (var ia = 0; ia < 16; ia++) {
+      var randomNumbera = Math.floor(Math.random() * ppcharsa.length);
+      ppida += ppcharsa.substring(randomNumbera, randomNumbera + 1);
+    }
+    $(this).attr("rippleid", ppida);
+
+    var pou = "relative";
+    if ($(this).css("position") === "absolute") {
+      pou = "absolute";
+    }
+    if ($(this).css("position") === "fixed") {
+      pou = "fixed";
+    }
+
+    $(this).css({
+      width: $(this).width() + "px",
+      height: $(this).height() + "px",
+      position: pou,
+      overflow: "hidden",
+      outline: "none",
+      "-webkit-tap-highlight-color": "rgba(0,0,0,0)"
+    });
+    ggww = ($(this).width() + $(this).height()) * 2;
+    if ($(this).width() > $(this).height()) {
+      ggww = $(this).width() * 4;
+    } else {
+      ggww = $(this).height() * 4;
+    }
+
+    var xPos = eee.pageX - $(this).offset().left - ggww / 2;
+    var yPos = eee.pageY - $(this).offset().top - ggww / 2;
+    $("body").append(
+      '<style vgf="' +
+        ppid +
+        '">.rippleanimation' +
+        ppid +
+        " {animation-name:ripple" +
+        ppid +
+        ";animation-duration:" +
+        time / 1000 +
+        "s;animation-fill-mode:forwards;animation-timing-function:ease-out}@keyframes ripple" +
+        ppid +
+        " {0%{opacity:" +
+        opacity +
+        ";transform:scale(0)}60%{opacity:" +
+        0 +
+        ";transform:scale(0.8)}100%{opacity:" +
+        0 +
+        ";transform:scale(1)}}</style>"
+    );
+    $(this).append(
+      '<div style="width:' +
+        ggww +
+        "px;height:" +
+        ggww +
+        "px;position: absolute;top:" +
+        yPos +
+        "px;left:" +
+        xPos +
+        "px;border-radius:99em;transform:scale(0);opacity:" +
+        opacity +
+        ";background:" +
+        color +
+        '; overflow:hidden; -webkit-user-select:none; outline:none; -webkit-tap-highlight-color:rgba(0,0,0,0);will-change: transform,opacity;" id="' +
+        ppid +
+        '"></div>'
+    );
+
+    setTimeout(function () {
+      $("#" + ppid).attr("class", "rippleanimation" + ppid);
+    }, 1);
+    setTimeout(function () {
+      $("#" + ppid).remove();
+      $('style[vgf="' + ppid + '"]').remove();
+      $('*[rippleid="' + ppida + '"]').attr("style", ogstyle);
+    }, time / 0.9);
+    if ($(this).attr("ripple-onclick") != "") {
+      eval(
+        "setTimeout(function() {" +
+          $(this).attr("ripple-onclick") +
+          "}," +
+          (5 + time / 1.5) / 2 +
+          ");"
+      );
+    }
+  });
+}
+function gid() {
+var genidchars = "0123456789abcdefghijklmnopqrstuvwxyz";
+            var genid = "";
+            for (var i = 0; i < 64; i++) {
+                var genrandomNumber = Math.floor(Math.random() * genidchars.length);
+                genid += genidchars.substring(genrandomNumber, genrandomNumber + 1);
+            }
+  return genid ;
+}
+let saveicon = '<svg stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="saveicon"><path d="M18.7599 57C19.3193 57 19.8477 56.8096 20.345 56.4289C20.8423 56.0482 21.6193 55.345 22.676 54.3193L31.7902 45.345C31.9301 45.1896 32.0699 45.1896 32.2098 45.345L41.324 54.3193C42.3807 55.3294 43.1538 56.0287 43.6434 56.4172C44.1329 56.8057 44.6651 57 45.2401 57C46.0171 57 46.6232 56.7514 47.0583 56.2541C47.4934 55.7568 47.711 55.0575 47.711 54.1562L47.711 13.69C47.711 11.4678 47.1593 9.7972 46.0559 8.67832C44.9526 7.55944 43.3054 7 41.1142 7L22.8858 7C20.6946 7 19.0474 7.55944 17.9441 8.67832C16.8407 9.7972 16.289 11.4678 16.289 13.69L16.289 54.1562C16.289 55.0575 16.5066 55.7568 16.9417 56.2541C17.3768 56.7514 17.9829 57 18.7599 57ZM20.6713 50.7063C20.5004 50.8617 20.3411 50.92 20.1935 50.8811C20.0458 50.8423 19.972 50.7063 19.972 50.4732L19.972 13.7366C19.972 12.7265 20.2323 11.965 20.7529 11.4522C21.2735 10.9394 22.0466 10.683 23.0723 10.683L40.951 10.683C41.9611 10.683 42.7265 10.9394 43.2471 11.4522C43.7677 11.965 44.028 12.7265 44.028 13.7366L44.028 50.4732C44.028 50.7063 43.9542 50.8423 43.8065 50.8811C43.6589 50.92 43.4996 50.8617 43.3287 50.7063L33.2354 40.9161C32.8625 40.5587 32.4507 40.38 32 40.38C31.5493 40.38 31.1375 40.5587 30.7646 40.9161L20.6713 50.7063Z" fill="#4e4e4e" fill-rule="evenodd" opacity="1" stroke="none"/></svg>'
+let savedicon = '<svg stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="savedicon"><path d="M18.7599 57C19.3193 57 19.8477 56.8096 20.345 56.4289C20.8423 56.0482 21.6193 55.345 22.676 54.3193L31.7902 45.345C31.9301 45.1896 32.0699 45.1896 32.2098 45.345L41.324 54.3193C42.3807 55.3294 43.1538 56.0287 43.6434 56.4172C44.1329 56.8057 44.6651 57 45.2401 57C46.0171 57 46.6232 56.7514 47.0583 56.2541C47.4934 55.7568 47.711 55.0575 47.711 54.1562L47.711 13.69C47.711 11.4678 47.1593 9.7972 46.0559 8.67832C44.9526 7.55944 43.3054 7 41.1142 7L22.8858 7C20.6946 7 19.0474 7.55944 17.9441 8.67832C16.8407 9.7972 16.289 11.4678 16.289 13.69L16.289 54.1562C16.289 55.0575 16.5066 55.7568 16.9417 56.2541C17.3768 56.7514 17.9829 57 18.7599 57Z" fill="#4e4e4e" fill-rule="evenodd" opacity="1" stroke="none"/></svg>';
+
+
+
+
+$('.tab-btn').click(function () {
+  var line = 0;
+  var content = 0;
+  var tabwidth = $(".tab-line-box").width();
+  var contentwidth = $(".content-box").width();
+  if ($(this).attr("s") === "data") {
+    line = 0;
+    content = 0;
+  }
+  if ($(this).attr("s") === "drawlots") {
+    line = (1 / 3) * 1 * tabwidth;
+    content = 1 * contentwidth * -1;
+  }
+  if ($(this).attr("s") === "option") {
+    line = (1 / 3) * 2 * tabwidth;
+    content = 2 * contentwidth * -1;
+    osaved()
+  }
+  $(".tab-line-box2").css({"transform": "translateX(" + line + "px)","transition": "0.35s"});
+  $(".tab-line").css({"width":$('.tab-btn[s="' + $(this).attr("s") + '"] .tab-btn-b').width() + "px","transition": "0.3s"});
+  $(".content-box2").css({"transform":"translate(" + content + "px)","transition": "0.3s"});
+});
+
+
+
+$('.dtab[cx="data"]').click(function() {
+  $('.dtab[cx="data"]').attr('gj','0')
+  $(this).attr('gj','1')
+  if($(this).attr('fd') === 'text') {
+    $('.data-csv-table').css({'display':'none'})
+    $('#data-text').css({'display':'block'})
+  }
+  if($(this).attr('fd') === 'csv') {
+    $('.data-csv-table').css({'display':'block'})
+    $('#data-text').css({'display':'none'})
+  }
+})
+
+$('.dtab[cx="option"]').click(function() {
+  $('.dtab[cx="option"]').attr('gj','0')
+  $(this).attr('gj','1')
+  if($(this).attr('wd') === 'fontsize') {
+    $('.savedss').css({'display':'none'})
+    $('.fontsize').css({'display':'block'})
+  }
+  if($(this).attr('wd') === 'saved') {
+    $('.savedss').css({'display':'block'})
+    $('.fontsize').css({'display':'none'})
+  }
+})
+
+
+
+var data = ['1','2','3']
+var fontsi = 20
+function searchItemsbyname(name) {
+  var gh = []
+for(var t in window.localStorage) {
+if(String(t).indexOf(name) > -1) {
+gh.push(t)
+}
+}
+return gh
+}
+
+function osaved() {
+  var sdhtm = []
+  var sd = searchItemsbyname('drawlots_saved_x_')
+  var sdrpid = []
+  for (var i = 0; i < sd.length; i++) {
+    var tdid = 'sv_' + gid()
+    var tdh = localStorage.getItem(sd[i])
+    var tdarr = String(tdh).split('\n')
+    var len = tdarr.length
+    var ltt = len + ' draw'
+    sdrpid.push('.savedlist[ty="' + tdid + '"]')
+    if(len > 1) {
+      ltt = len + ' draws'
+    }
+    var tdarr_1 = tdarr[0] 
+    var tdarr_2 = tdarr[1]
+    if(tdarr_1 === null || tdarr_1 === undefined) {
+      tdarr_1 = ''
+    }
+    if(tdarr_2 === null || tdarr_2 === undefined) {
+      tdarr_2 = ''
+    }
+    
+      
+      sdhtm.push('<div class="savedlist" ty="' + tdid + '" ripple-onclick="usesaved(' + "'" + sd[i] + "'" + ')"><div class="savedtitle">' + ltt + '</div><div class="savedlistpreviewbox"><li>' + tdarr_1 + '</li><li>' + tdarr_2 + '</li><li>...</li></div></div>')
+    
+    
+  }
+  $('.savedss').html(sdhtm.join(''))
+    
+    ripple(sdrpid.join(','), "#000", "0.3", 888, "true");
+  
+}
+
+function usesaved(hsid) {
+  var tc = String(localStorage.getItem(hsid)).split('\n')
+  data = tc
+  printData()
+  $('.tab-btn[s="data"]').click()
+}
+
+function printData() {
+  $('#data-text').val(data.join('\n'))
+  $('.data-csv-table table').html('<tr><td>' + data.join('</td></tr><tr><td>') + '</td></tr>')
+  $('.drawlotsresult').css({'font-size':fontsi + 'px'})
+  $('#fontsizeinput').val(fontsi)
+}
+function setData() {
+  
+  data = String($('#data-text').val()).split('\n')
+  fontsi = parseInt($('#fontsizeinput').val())
+  if($('#fontsizeinput').val() === '' || fontsi === 'NaN') {
+    fontsi = 0
+  }
+  var svd = searchItemsbyname('drawlots_saved_x_' + sha256(data.join('\n')))
+  //console.log(localStorage.getItem('drawlots_saved_x_' + sha256(data.join('\n'))))
+  if(svd.length > 0) {
+    $('.save').attr('sv','1')
+  }
+  else {
+    $('.save').attr('sv','0')
+  }
+  
+}
+function save() {
+  var svd = searchItemsbyname('drawlots_saved_x_' + sha256(data.join('\n')))
+  
+  if(svd.length > 0) {
+    $('.save').attr('sv','0')
+    localStorage.removeItem('drawlots_saved_x_' + sha256(data.join('\n')))
+  }
+  else {
+    $('.save').attr('sv','1')
+    localStorage.setItem('drawlots_saved_x_' + sha256(data.join('\n')),data.join('\n'))
+    
+  }
+}
+var selarr = ['#data-text','#fontsizeinput']
+for (var r = 0; r < selarr.length; r++) {
+  
+document.querySelector(selarr[r]),addEventListener("paste", function (e){
+    setData();
+    printData()
+  });
+document.querySelector(selarr[r]).addEventListener("cut", function (e){
+    setData();
+    printData()
+  });
+document.querySelector(selarr[r]).addEventListener("selectionchange", function (e){
+    setData();
+    printData()
+  });
+ 
+document.querySelector(selarr[r]).addEventListener("keyup", function (e){
+    setData();
+    printData()
+  });
+}
+
+ 
+    function CSVToArray( strData, strDelimiter ){
+        strDelimiter = (strDelimiter || ",");
+        var objPattern = new RegExp(("(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +"(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +"([^\"\\" + strDelimiter + "\\r\\n]*))"),"gi");
+        var arrData = [[]];
+        var arrMatches = null;
+        while (arrMatches = objPattern.exec( strData )){
+        var strMatchedDelimiter = arrMatches[ 1 ];
+        if (strMatchedDelimiter.length && (strMatchedDelimiter != strDelimiter)){arrData.push( [] );}
+                if (arrMatches[ 2 ]){
+                  var strMatchedValue = arrMatches[ 2 ].replace(new RegExp( "\"\"", "g" ),"\"");
+} else {
+var strMatchedValue = arrMatches[ 3 ];
+}
+arrData[ arrData.length - 1 ].push( strMatchedValue );
+}
+
+        // Return the parsed data.
+        return( arrData );
+    }
+function csvtotable(csv) {
+  var arr = CSVToArray(csv)
+  var flid = gid()
+  var sel = []
+  
+ 
+  
+  for (var i = 0; i < arr[0].length; i++) {
+    sel.push('<td gx="' + flid + '_' + i + '" hu="1"><div class="csvselectbtn" gx="' + flid + '_' + i + '" vg="' + flid + '" ripple-onclick="csvselect(' + "'" + flid + '_' + i + "'" + ')">select</div></td>')
+  }
+   
+  for (var i = 0; i < arr.length; i++) {
+    var arr2 = arr[i]
+  
+    for (var r = 0; r < arr2.length; r++) {
+      var cfd = arr2[r]
+      arr2.splice(r, 1, '<td cl="' + flid + '_' + r + '">' + cfd + '</td>');
+    }
+    arr.splice(i, 1, arr2.join(''));
+  }
+  return ['<tr>' + sel.join('') + '</tr><tr>' + arr.join('</tr><tr>') + '</tr>',flid]
+}
+
+function csvselect(fld) {
+  var dtarr = []
+  for (var i = 0; i < $('td[cl="' + fld + '"]').length; i++) {
+    var thf = String($('td[cl="' + fld + '"]').eq(i).text()).replaceAll(/(\r\n|\r|\n)/g,'')
+    if(thf.length > 0) {
+      dtarr.push(thf)
+    }
+    
+  }
+  $('#data-text').val(dtarr.join('\n'))
+  setData()
+  printData()
+}
+
+
+function drawlots() {
+  if(data.length >= 2) {
+    var rand = (Math.round(Math.random()*data.length)-1)
+    if(rand >= data.length) {
+      rand = data.length
+    }
+    if(rand <= 0) {
+      rand = 0
+    }
+    var res = data[rand]
+    $('.drawlotsresult').text(res)
+  }
+  else {
+    $('.drawlotsresult').text('At least two draws.')
+  }
+}
+
+
+document.getElementById("csvfile").addEventListener("change", handleFileSelect, false);
+
+    
+function handleFileSelect(evt) {
+  var f = evt.target.files[0]; // FileList object
+  var reader = new FileReader();
+  // Closure to capture the file information.
+  reader.onload = (function(theFile) {
+    return function(e) {
+      //var binaryData = e.target.result;
+reader.onload = function(e){
+  var ht = csvtotable(reader.result)
+  
+  $('.data-csv-table table').html(ht[0])
+  
+  ripple('.csvselectbtn[vg="' + ht[1] + '"]', "#000", "0.3", 888, "false");
+  
+};
+reader.readAsText( theFile, "utf-8" )
+
+   
+     
+    };
+  })(f);
+  // Read in the image file as a data URL.
+  reader.readAsBinaryString(f);
+}
+
+ripple('.tab-btn,.drawlotsbtn,.save,.filebtn', "#000", "0.3", 888, "true");
+
+printData()
+setData()
+$('.save').html(saveicon + savedicon)
+</script>
