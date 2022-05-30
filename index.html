@@ -166,6 +166,9 @@ outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);
   align-items: center;
   position: relative;
 }
+.dtaboption {
+  width: calc(100% / 3);
+  }
 .dtab::after {
   content: var(--text-d);
   position: absolute;
@@ -425,8 +428,9 @@ td[hu="1"] {
       
      
       <div class="dtabbox" cx="option">
-        <div class="dtab" style="--text-d: 'Font size';" gj="1" wd="fontsize" cx="option"></div>
-        <div class="dtab" style="--text-d: 'Saved';" gj="0" wd="saved" cx="option"></div>
+        <div class="dtab dtaboption" style="--text-d: 'Draw Lots';" gj="1" wd="drawlots" cx="option"></div>
+        <div class="dtab dtaboption" style="--text-d: 'Font size';" gj="0" wd="fontsize" cx="option"></div>
+        <div class="dtab dtaboption" style="--text-d: 'Saved';" gj="0" wd="saved" cx="option"></div>
       </div>
         
         <div class="fontsize">
@@ -617,13 +621,18 @@ $('.dtab[cx="data"]').click(function() {
 $('.dtab[cx="option"]').click(function() {
   $('.dtab[cx="option"]').attr('gj','0')
   $(this).attr('gj','1')
+  
+  if($(this).attr('wd') === 'drawlots') {
+    $('.savedss,.fontsize').css({'display':'none'})
+    $('.drawlotsgg').css({'display':'block'})
+  }
   if($(this).attr('wd') === 'fontsize') {
-    $('.savedss').css({'display':'none'})
+    $('.savedss,.drawlotsgg').css({'display':'none'})
     $('.fontsize').css({'display':'block'})
   }
   if($(this).attr('wd') === 'saved') {
     $('.savedss').css({'display':'block'})
-    $('.fontsize').css({'display':'none'})
+    $('.fontsize,.drawlotsgg').css({'display':'none'})
   }
 })
 
