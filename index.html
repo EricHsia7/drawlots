@@ -375,6 +375,36 @@ td[hu="1"] {
   align-items: center;
   color:var(--s-4e4e4e);
 }
+  input[type="checkbox"] {
+  -webkit-appearance:none;
+  width:30px;
+  height:30px;
+  border-radius:25%;
+  margin:0px;
+  padding:0px;
+  outline:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  background:transparent;
+  position:relative;
+  border:2px solid var(--s-4e4e4e);
+  box-sizing: border-box;
+}
+input[type="checkbox"]:checked {
+  background:var(--s-4e4e4e);
+}
+input[type="checkbox"]::after {
+  content:'';
+  position:absolute;
+  top:5px;
+  left:5px;
+  width:16px;
+  height:16px;
+  background:var(--s-4e4e4e);
+  clip-path:path('M6.05456 15.935C6.45076 15.935 6.7634 15.7617 6.99246 15.415L15.7678 1.59721C15.8483 1.46721 15.9071 1.34804 15.9443 1.2397C15.9814 1.13136 16 1.02147 16 0.910041C16 0.65622 15.9226 0.451925 15.7678 0.297156C15.6131 0.142387 15.4088 0.0650029 15.155 0.0650029C14.9692 0.0650029 14.8176 0.1006 14.6999 0.171793C14.5823 0.242987 14.4678 0.365254 14.3564 0.538595L6.01741 13.827L1.69008 8.16251C1.46721 7.85916 1.20101 7.70749 0.891468 7.70749C0.631457 7.70749 0.417876 7.78951 0.250725 7.95357C0.0835752 8.11762 0 8.32656 0 8.58038C0 8.69182 0.0216676 8.8048 0.0650029 8.91933C0.108338 9.03386 0.176436 9.14684 0.269298 9.25827L5.0888 15.3964C5.36738 15.7555 5.6893 15.935 6.05456 15.935Z');
+}
+input[type="checkbox"]:checked::after {
+  background:var(--s-fffff)
+}
 </style>
 <style>
  :root {
