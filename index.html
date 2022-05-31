@@ -501,7 +501,7 @@ input[type="checkbox"]:checked::after {
       <div class="drawlotsgg">
         <label for="multipledrawsatonce">
           <input type="checkbox" name="multipledrawsatonce" id="multipledrawsatonce">
-          Draw&nbsp;<input type="text" placeholder="quantity">&nbsp;at a time.
+          Draw&nbsp;<input type="text" placeholder="quantity" id="multipledrawsatonceinput">&nbsp;at a time.
         </label>
         <label for="onlydrawsthatcontain">
           <input type="checkbox" name="onlydrawsthatcontain" id="onlydrawsthatcontain">
@@ -887,17 +887,35 @@ function csvselect(fld) {
 
 
 function drawlots() {
-  if(data.length >= 2) {
-    var rand = (Math.round(Math.random()*data.length)-1)
-    if(rand >= data.length) {
-      rand = data.length
+  var drawlotsqt = 1
+  var resultarr = [] 
+  var drdata = data
+  if(drdata.length >= 2) {
+if($('#multipledrawsatonce').prop('checked')) {
+  drawlotsqt = parseInt($('#multipledrawsatonceinput').val())
+  if(drawlotsqt >= drdata.length) {
+    $('.drawlotsresult').text('The number of draws must not exceed or equal the total number of draws.')
+    return ''
+  }
+}
+for (var i = 0; i < drawlotsqt; i++) {
+
+    var rand = (Math.round(Math.random()*drdata.length)-1)
+    if(rand >= drdata.length) {
+      rand = drdata.length
     }
     if(rand <= 0) {
       rand = 0
     }
-    var res = data[rand]
-    $('.drawlotsresult').text(res)
+    var res = drdata[rand]
+    resultarr.push(res)
+    drdata.splice(rand,1)
+
   }
+  $('.drawlotsresult').text(resultarr.join('<br>'))
+
+  }
+  
   else {
     $('.drawlotsresult').text('At least two draws.')
   }
