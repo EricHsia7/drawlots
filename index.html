@@ -505,7 +505,7 @@ input[type="checkbox"]:checked::after {
         </label>
         <label for="onlydrawsthatcontain">
           <input type="checkbox" name="onlydrawsthatcontain" id="onlydrawsthatcontain">
-          Only draws that contain "<input type="text" placeholder="text">".
+          Only draws that contain "<input type="text" placeholder="text" id="onlydrawsthatcontaininput">".
         </label>
         
         
@@ -890,7 +890,19 @@ function drawlots() {
   var drawlotsqt = 1
   var resultarr = [] 
   var drdata = data.slice()
-  if(data.length >= 2) {
+  var fgdata = []
+  if($('#onlydrawsthatcontain').prop('checked')) {
+
+    var kww = String($('#onlydrawsthatcontaininput').val())
+    for (var i = 0; i < drdata.length; i++) {
+       if(String(drdata[i]).indexOf(kww) > -1) {
+        fgdata.push(drdata[i])
+       }
+    }
+    drdata = fgdata.splice()
+  }
+
+  if(drdata.length >= 2) {
 if($('#multipledrawsatonce').prop('checked')) {
   drawlotsqt = parseInt($('#multipledrawsatonceinput').val())
   if(drawlotsqt >= drdata.length) {
