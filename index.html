@@ -890,13 +890,12 @@ function drawlots() {
   var drawlotsqt = 1
   var resultarr = [] 
   var drdata = data.slice()
-  var fgdata = []
   if($('#onlydrawsthatcontain').prop('checked')) {
-
+    var fgdata = []
     var kww = String($('#onlydrawsthatcontaininput').val())
-    for (var i = 0; i < drdata.length; i++) {
-       if(String(drdata[i]).indexOf(kww) > -1) {
-        fgdata.push(drdata[i])
+    for (var k = 0; k < drdata.length; k++) {
+       if(String(drdata[k]).indexOf(kww) > -1) {
+        fgdata.push(drdata[k])
        }
     }
     drdata = fgdata.splice()
