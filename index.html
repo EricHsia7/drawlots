@@ -890,7 +890,7 @@ function drawlots() {
   var drawlotsqt = 1
   var resultarr = [] 
   var drdata = data
-  if(drdata.length >= 2) {
+  if(data.length >= 2) {
 if($('#multipledrawsatonce').prop('checked')) {
   drawlotsqt = parseInt($('#multipledrawsatonceinput').val())
   if(drawlotsqt >= drdata.length) {
@@ -912,7 +912,7 @@ for (var i = 0; i < drawlotsqt; i++) {
     drdata.splice(rand,1)
 
   }
-  $('.drawlotsresult').text(resultarr.join('<br>'))
+  $('.drawlotsresult').html(resultarr.join('<br>'))
 
   }
   
