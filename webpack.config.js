@@ -84,6 +84,7 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html', // Path to your custom HTML template file
+        filename: 'index.html',
         inject: 'head',
         minify: {
           collapseWhitespace: true,
