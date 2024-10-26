@@ -1,4 +1,4 @@
-const sha256 = require('sha256');
+const md5 = require('md5');
 
 export function generateIdentifier(prefix: string = ''): string {
   const characterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
@@ -12,5 +12,5 @@ export function generateIdentifier(prefix: string = ''): string {
 }
 
 export function hash(content: any): string {
-  return sha256(content);
+  return md5(content);
 }
