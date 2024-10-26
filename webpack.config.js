@@ -83,8 +83,8 @@ module.exports = (env, argv) => {
         }
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.html', // Path to your custom HTML template file
-        filename: 'index.html',
+        template: './src/index.html' // Path to your custom HTML template file
+        /*
         inject: 'head',
         minify: {
           collapseWhitespace: true,
@@ -96,6 +96,7 @@ module.exports = (env, argv) => {
           useShortDoctype: false,
           minifyJS: true // This option minifies inline JavaScript
         }
+          */
       }),
       new WorkboxPlugin.GenerateSW({
         clientsClaim: true,
