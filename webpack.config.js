@@ -204,7 +204,8 @@ module.exports = (env, argv) => {
     },
     stats: {
       children: true
-    }
+    },
+    cache: false
     // Add any additional plugins and configurations as needed
   };
 };
