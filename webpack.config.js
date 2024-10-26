@@ -69,7 +69,7 @@ module.exports = (env, argv) => {
         // Output CSS filename
       }),
       new MangleCssClassPlugin({
-        classNameRegExp: '(css_|b-cssvar-)[a-z0-9_-]*',
+        classNameRegExp: '(css_|d-cssvar-)[a-z0-9_-]*',
         mangleCssVariables: true,
         /*ignorePrefix: [''],*/
         log: false

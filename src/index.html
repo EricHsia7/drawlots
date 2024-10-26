@@ -43,5 +43,15 @@
       <div class="css_add_image_element_body"></div>
     </div>
     <div class="css_navigation_bar"></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        drawlots2.initialize();
+      });
+      window.addEventListener('load', function () {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('./service-worker.js');
+        }
+      });
+    </script>
   </body>
 </html>
