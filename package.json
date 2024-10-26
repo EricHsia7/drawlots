@@ -1,5 +1,5 @@
 {
-  "name": "@erichsia7/drawlots2",
+  "name": "@erichsia7/drawlots",
   "version": "0.0.1",
   "description": "",
   "private": false,
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/EricHsia7/drawlots2.git"
+    "url": "https://github.com/EricHsia7/drawlots.git"
   },
-  "keywords": ["drawlots2", "typescript", "progressive", "web", "application"],
+  "keywords": ["drawlots", "typescript", "progressive", "web", "application"],
   "author": "EricHsia7",
   "bugs": {
-    "url": "https://github.com/erichsia7/drawlots2/issues"
+    "url": "https://github.com/erichsia7/drawlots/issues"
   },
-  "homepage": "https://erichsia7.github.io/drawlots2/",
+  "homepage": "https://erichsia7.github.io/drawlots/",
   "devDependencies": {
     "babel-loader": "^9.1.3",
     "@babel/core": "^7.25.2",

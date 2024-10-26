@@ -101,7 +101,7 @@ module.exports = (env, argv) => {
         skipWaiting: true,
         exclude: [/\.map$/, /LICENSE\.txt$/],
         include: [/\.js|css|png$/, /index\.html$/],
-        cacheId: `drawlots2-${thisVersion.hash}`,
+        cacheId: `drawlots-${thisVersion.hash}`,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com/,
@@ -130,7 +130,7 @@ module.exports = (env, argv) => {
       publicPath: './',
       crossOriginLoading: 'anonymous', // Required for SRI
       library: {
-        name: 'drawlots2',
+        name: 'drawlots',
         type: 'umd',
         umdNamedDefine: true,
         export: 'default'

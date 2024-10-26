@@ -10,7 +10,7 @@ function generateSetElement(setObject: SetObject): GeneratedElement {
   element.classList.add('css_library_set');
   element.id = id;
   element.innerHTML = `<div class="css_library_set_thumbnail">${setObject.thumbnail}</div><div class="css_library_set_name">${setObject.name}</div>`;
-  element.setAttribute('onclick', `drawlots2.sets.openSet('${setObject.id}')`);
+  element.setAttribute('onclick', `drawlots.sets.openSet('${setObject.id}')`);
   return {
     id: id,
     element: element

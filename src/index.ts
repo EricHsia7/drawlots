@@ -3,9 +3,9 @@ import './interface/index.css';
 
 import './interface/library/field.css';
 
-window.drawlots2 = {
+window.drawlots = {
   initialize: function () {},
   sets: {}
 };
 
-export default window.drawlots2;
+export default window.drawlots;
