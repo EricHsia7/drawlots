@@ -152,10 +152,6 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader']
-        },
-        {
-          test: /\.html$/,
-          use: 'html-loader'
         }
       ]
     },
