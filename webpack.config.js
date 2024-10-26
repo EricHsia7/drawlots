@@ -201,6 +201,9 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       hot: false
+    },
+    stats: {
+      children: true
     }
     // Add any additional plugins and configurations as needed
   };
