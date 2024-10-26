@@ -6,7 +6,9 @@ import './interface/index.css';
 import './interface/library/field.css';
 
 window.drawlots = {
-  initialize: function () {},
+  initialize: function () {
+    console.log('test')
+  },
   sets: {},
   test: {
     storeImage
