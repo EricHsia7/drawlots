@@ -1,3 +1,5 @@
+const sha256 = require('sha256');
+
 export function generateIdentifier(prefix: string = ''): string {
   const characterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
   let result = `${prefix}_`;
@@ -7,4 +9,8 @@ export function generateIdentifier(prefix: string = ''): string {
     result += characterSet.substring(randomNumber, randomNumber + 1);
   }
   return result;
+}
+
+export function hash(content: any): string {
+  return sha256(content);
 }
