@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Draw Lots</title>
+    <meta name="description" content="Draw Lots" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="defualt" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
+    <link rel="manifest" href="./manifest.json" />
+    <link href="./pwaicons/512x512.png" sizes="512x512" rel="apple-touch-icon" />
+    <link type="image/x-icon" href="./pwaicons/256x256_transparent.ico" rel="icon" />
+    <link type="image/x-icon" href="./pwaicons/256x256_transparent.ico" rel="bookmark" />
+    <link type="image/x-icon" href="./pwaicons/256x256_transparent.ico" rel="shortcut icon" />
+    <meta name="twitter:image:src" content="./open-graph-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Draw Lots" />
+    <meta name="twitter:description" content="Draw Lots" />
+    <meta property="og:image" content="./open-graph-image.png" />
+    <meta property="og:image:alt" content="Draw Lots" />
+    <meta property="og:site_name" content="Draw Lots" />
+    <meta property="og:type" content="object" />
+    <meta property="og:title" content="Draw Lots" />
+    <meta property="og:url" content="https://erichsia7.github.io/drawlots2" />
+    <meta property="og:description" content="Draw Lots" />
+    <!--apple touch startup images-->
+    <!--apple touch startup images-->
+    <meta name="version-hash" content="<%= process.env.HASH %>" />
+    <meta name="version-full-hash" content="<%= process.env.FULL_HASH %>" />
+    <meta name="version-branch-name" content="<%= process.env.BRANCH_NAME %>" />
+    <meta name="version-time-stamp" content="<%= process.env.TIME_STAMP %>" />
+  </head>
+  <body>
+    <!-- sets library -->
+    <div class="css_library_field">
+      <div class="css_library_body"></div>
+    </div>
+
+    <!-- set -->
+    <div class="css_set_field">
+      <div class="css_set_body"></div>
+    </div>
+    <div class="css_drawing_result_field">
+      <div class="css_drawing_result_body"></div>
+    </div>
+
+    <!-- add element -->
+    <div class="css_add_element_field">
+      <div class="css_add_element_body"></div>
+    </div>
+
+    <div class="css_add_number_element_field">
+      <div class="css_add_number_element_body"></div>
+    </div>
+
+    <div class="css_add_text_element_field">
+      <div class="css_add_text_element_body"></div>
+    </div>
+
+    <div class="css_add_image_element_field">
+      <div class="css_add_image_element_body"></div>
+    </div>
+
+    <div class="css_navigation_bar"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        drawlots2.initialize();
+      });
+      window.addEventListener('load', function () {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('./service-worker.js');
+        }
+      });
+    </script>
+  </body>
+</html>
