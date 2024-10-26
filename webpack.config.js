@@ -7,7 +7,7 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const AdvancedPreset = require('cssnano-preset-advanced');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { execSync } = require('child_process');
 const MangleCssClassPlugin = require('mangle-css-class-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
@@ -83,8 +83,7 @@ module.exports = (env, argv) => {
         }
       }),
       new HtmlWebpackPlugin({
-        template: './src/index.html' // Path to your custom HTML template file
-        /*
+        template: './src/index.html', // Path to your custom HTML template file
         inject: 'head',
         minify: {
           collapseWhitespace: true,
@@ -96,7 +95,6 @@ module.exports = (env, argv) => {
           useShortDoctype: false,
           minifyJS: true // This option minifies inline JavaScript
         }
-          */
       }),
       new WorkboxPlugin.GenerateSW({
         clientsClaim: true,
@@ -117,13 +115,11 @@ module.exports = (env, argv) => {
       new SubresourceIntegrityPlugin({
         hashFuncNames: ['sha256', 'sha384'], // Hash algorithms you want to use
         enabled: true
-      })
-      /*
+      }),
       new BundleAnalyzerPlugin({
         analyzerMode: 'static', // Generate static HTML report
         reportFilename: 'bundle-analysis-report/index.html' // Output file path and name
       })
-      */
     ],
     target: ['web', 'es6'], // Target the browser environment (es6 is the default for browsers)
     mode: 'production', // Set the mode to 'production' or 'development'
