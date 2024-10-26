@@ -100,7 +100,7 @@ module.exports = (env, argv) => {
         clientsClaim: true,
         skipWaiting: true,
         exclude: [/\.map$/, /LICENSE\.txt$/],
-        include: [/\.js|css|png$/, /index\.html$/],
+        include: [/\.js|css|png$/],
         cacheId: `drawlots-${thisVersion.hash}`,
         runtimeCaching: [
           {
