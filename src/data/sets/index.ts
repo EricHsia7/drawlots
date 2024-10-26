@@ -1,32 +1,24 @@
 import { generateIdentifier } from '../../tools/index';
-import { ImageObject } from '../images/index';
+import { SetElementObject } from '../elements/index';
 import { lfGetItem, lfListItemKeys, lfSetItem } from '../storage/index';
 
-interface NumberSetElementObject {
+export interface SetObject {
   id: string;
-  type: 'number';
-  number: number;
-}
-
-interface TextSetElementObject {
-  id: string;
-  type: 'text';
-  text: string;
-}
-
-interface ImageSetElementObject {
-  id: string;
-  type: 'image';
-  image: ImageObject;
-}
-
-type SetElementObject = NumberSetElementObject | TextSetElementObject | ImageSetElementObject;
-
-interface SetObject {
-  id: string;
-  elements: Array<SetElementObject>;
+  elements: Array<SetElementObject['id']>;
   name: string;
   thumbnail: number;
+}
+
+export async function createSets(): Promise<SetObject['id']> {
+  const id = generateIdentifier('set');
+  let object: SetObject = {
+    id: id,
+    elements: [],
+    name: 'Untitled Set',
+    thumbnail: 0
+  };
+  await lfSetItem(0, id, JSON.stringify(object));
+  return id;
 }
 
 export async function listSets(): Promise<Array<SetObject>> {
@@ -40,19 +32,7 @@ export async function listSets(): Promise<Array<SetObject>> {
   return result;
 }
 
-export async function createSets(): SetObject['id'] {
-  const id = generateIdentifier('set');
-  let object: SetObject = {
-    id: id,
-    elements: [],
-    name: 'Untitled Set',
-    thumbnail: 0
-  };
-  await lfSetItem(0, id, JSON.stringify(object));
-  return id;
-}
-
-export async function getSet(id: SetObject['id']): SetObject {
+export async function getSet(id: SetObject['id']): Promise<SetObject> {
   const item = await lfSetItem(0, id);
   const parsedItem = JSON.parse(item);
   return parsedItem;
