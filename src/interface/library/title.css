@@ -3,9 +3,11 @@
   top: 15px;
   left: 15px;
   width: calc(100% - 15px * 2);
-  height: 60px;
+  height: 65px;
   font-size: 40px;
   font-weight: 700;
   color: var(--d-cssvar-000408);
   align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
 }
