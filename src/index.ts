@@ -15,6 +15,7 @@ let drawlots_initialized = false;
 window.drawlots = {
   initialize: function () {
     if (!drawlots_initialized) {
+      resizeLibraryField();
       window.addEventListener('resize', () => {
         resizeLibraryField();
       });
