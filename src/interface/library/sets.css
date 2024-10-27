@@ -1,21 +1,10 @@
-@property --d-cssvar-set-width {
-  syntax: '<length>';
-  inherits: false;
-  initial-value: 0px;
-}
-
-@property --d-cssvar-set-height {
-  syntax: '<length>';
-  inherits: false;
-  initial-value: 0px;
-}
-
 
 /* set */
 .css_library_field .css_library_body .css_library_set {
   position: relative;
   width: var(--d-cssvar-set-width);
   width: var(--d-cssvar-set-heigt);
+  margin: 7.5px;
 }
 
 /* set > thumbnail */

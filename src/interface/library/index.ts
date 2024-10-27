@@ -1,10 +1,32 @@
 import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
 import { listSets, SetObject } from '../../data/sets/index';
 import { generateIdentifier } from '../../tools/index';
+import { FieldSize, GeneratedElement } from '../index';
 
 let previousSets = [];
 
 const libraryField = documentQuerySelector('.css_library_field');
+
+function queryLibraryFieldSize(): FieldSize {
+  return {
+    width: window.innerWidth,
+    height: window.innerHeight
+  };
+}
+
+export function resizeLibraryField(): void {
+  const size = queryLibraryFieldSize();
+  const margin = 7.5;
+  let setWidth = 0;
+  let setHeight = 200;
+  if (size.width < 500) {
+    setWidth = size.width - margin;
+  } else {
+    setWidth = size.width / Math.floor(size.width / 300) - margin;
+  }
+  libraryField.style.setProperty('--d-cssvar-set-width', setWidth);
+  libraryField.style.setProperty('--d-cssvar-set-height', setHeight);
+}
 
 function generateSetElement(): GeneratedElement {
   const id = generateIdentifier('s');

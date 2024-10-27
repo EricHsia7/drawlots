@@ -33,7 +33,7 @@ export async function listSets(): Promise<Array<SetObject>> {
 }
 
 export async function getSet(id: SetObject['id']): Promise<SetObject> {
-  const item = await lfSetItem(0, id);
+  const item = await lfGetItem(0, id);
   const parsedItem = JSON.parse(item);
   return parsedItem;
 }

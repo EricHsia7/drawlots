@@ -1,3 +1,15 @@
+@property --d-cssvar-set-width {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --d-cssvar-set-height {
+  syntax: '<length>';
+  inherits: true;
+  initial-value: 0px;
+}
+
 .css_library_field {
   position: fixed;
   top: 0px;

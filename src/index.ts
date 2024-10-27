@@ -1,4 +1,4 @@
-import { initializeLibrary } from './interface/library/index';
+import { initializeLibrary, resizeLibraryField } from './interface/library/index';
 import { storeImage } from './data/images/index';
 import { createSet } from './data/sets/index';
 
@@ -9,9 +9,23 @@ import './interface/library/field.css';
 import './interface/library/body.css';
 import './interface/library/sets.css';
 
+let drawlots_initialized = false;
+
 window.drawlots = {
   initialize: function () {
-    initializeLibrary();
+    if (!drawlots_initialized) {
+      window.addEventListener('resize', () => {
+        resizeLibraryField();
+      });
+      if (screen) {
+        if (screen.orientation) {
+          screen.orientation.addEventListener('change', () => {
+            resizeLibraryField();
+          });
+        }
+      }
+      initializeLibrary();
+    }
   },
   sets: {},
   test: {
