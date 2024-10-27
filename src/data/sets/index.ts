@@ -37,3 +37,12 @@ export async function getSet(id: SetObject['id']): Promise<SetObject> {
   const parsedItem = JSON.parse(item);
   return parsedItem;
 }
+
+export async function addElementToSet(setID: SetObject['id'], elementID: SetElementObject['id']): boolean {
+  let currentSet = await getSet(setID);
+  if (currentSet.elements.indexOf(elementID) < 0) {
+    currentSet.elements.push(elementID);
+  }
+  await lfSetItem(0, setID, JSON.stringify(currentSet));
+  return true;
+}

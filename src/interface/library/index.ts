@@ -1,7 +1,9 @@
 import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
 import { listSets, SetObject } from '../../data/sets/index';
+import { getElement, SetElementObject } from '../../data/elements/index';
 import { generateIdentifier } from '../../tools/index';
 import { FieldSize, GeneratedElement } from '../index';
+import { getImage } from '../../data/images/index';
 
 let previousSets = [];
 
@@ -43,7 +45,29 @@ function generateSetElement(): GeneratedElement {
 
 function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): void {
   function updateThumbnail(element: HTMLElement, set: SetObject): void {
-    elementQuerySelector(element, '.css_library_set_thumbnail').innerHTML = set.thumbnail;
+    const thisThumbnailElement = elementQuerySelector(element, '.css_library_set_thumbnail');
+    if (set.elements.length > 0) {
+      const thumbnailElementID = set.elements[set.thumbnail];
+      getElement(thumbnailElementID).then((thumbnailElementObject) => {
+        switch (thumbnailElementObject.type) {
+          case 'text':
+            thisThumbnailElement.innerText = thumbnailElementObject.text;
+            break;
+          case 'image':
+            getImage(thumbnailElementObject.image).then((blobURL) => {
+              thisThumbnailElement.innerHTML = `<img src="${blobURL}">`;
+            });
+            break;
+          case 'number':
+            thisThumbnailElement.innerText = String(thumbnailElementObject.number);
+            break;
+          default:
+            break;
+        }
+      });
+    } else {
+      thisThumbnailElement.innerText = 'Empty Set';
+    }
   }
 
   function updateName(element: HTMLElement, set: SetObject): void {

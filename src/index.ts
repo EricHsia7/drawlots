@@ -1,6 +1,7 @@
 import { initializeLibrary, resizeLibraryField } from './interface/library/index';
 import { storeImage } from './data/images/index';
-import { createSet } from './data/sets/index';
+import { addElementToSet, createSet } from './data/sets/index';
+import { createElement } from './data/elements/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -30,7 +31,16 @@ window.drawlots = {
   sets: {},
   test: {
     storeImage,
-    createSet
+    createSet,
+    createElement,
+    addElementToSet,
+    testElement: function (text) {
+      createSet().then((setID) => {
+        createElement('text', text).then((elementID) => {
+          addElementToSet(setID, elementID);
+        });
+      });
+    }
   }
 };
 

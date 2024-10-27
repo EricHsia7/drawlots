@@ -1,8 +1,10 @@
-import { blobToBase64 } from '../../tools/blob';
+import { blobToDataURL, dataURLToBlobURL } from '../../tools/blob';
 import { hash } from '../../tools/index';
 import { lfGetItem, lfSetItem } from '../storage/index';
 
 export type ImageHash = string;
+
+let images = {};
 
 export async function storeImage(file: File): Promise<ImageHash> {
   if (!file || !(file instanceof File)) {
@@ -14,8 +16,7 @@ export async function storeImage(file: File): Promise<ImageHash> {
     const fileBlob = new Blob([file], { type: file.type });
 
     // Store the image blob in IndexedDB with a unique key (like the file name)
-    const base64EncodedContent = await blobToBase64(fileBlob);
-    const dataURL = `data:${file.type};base64,${base64EncodedContent}`;
+    const dataURL = await blobToDataURL(fileBlob, file.type);
     const imageHash = `_${hash(dataURL)}`;
     await lfSetItem(1, imageHash, dataURL);
     return imageHash;
@@ -25,6 +26,13 @@ export async function storeImage(file: File): Promise<ImageHash> {
 }
 
 export async function getImage(imageHash: ImageHash): Promise<string> {
+  let blobURL = '';
   const item = await lfGetItem(1, imageHash);
-  return item;
+  if (!images.hasOwnProperty(imageHash)) {
+    blobURL = await dataURLToBlobURL(item);
+    images[imageHash] = blobURL;
+  } else {
+    blobURL = images[imageHash];
+  }
+  return blobURL;
 }
