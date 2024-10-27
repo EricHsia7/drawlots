@@ -2,6 +2,7 @@ import { initializeLibrary, resizeLibraryField } from './interface/library/index
 import { storeImage } from './data/images/index';
 import { addElementToSet, createSet } from './data/sets/index';
 import { createElement } from './data/elements/index';
+import { loadCSS } from './interface/lazy-css';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -23,6 +24,7 @@ import './interface/add-image-element/field.css';
 import './interface/navigation-bar/index.css';
 
 let drawlots_initialized = false;
+let drawlots_secondly_initialized = false;
 
 window.drawlots = {
   initialize: function () {
@@ -39,6 +41,13 @@ window.drawlots = {
         }
       }
       initializeLibrary();
+    }
+  },
+  secondlyInitialize: function () {
+    if (!drawlots_secondly_initialized) {
+      drawlots_secondly_initialized = true;
+      loadCSS('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap', 'noto_sans_tc');
+      loadCSS('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', 'material_symbols');
     }
   },
   sets: {},
