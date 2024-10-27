@@ -57,8 +57,8 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
             thisThumbnailElement.innerText = thumbnailElementObject.text;
             break;
           case 'image':
-            getImage(thumbnailElementObject.image).then((blobURL) => {
-              thisThumbnailElement.innerHTML = `<img src="${blobURL}">`;
+            getImage(thumbnailElementObject.image).then((imageObject) => {
+              thisThumbnailElement.innerHTML = `<img src="${imageObject.blobURL}">`;
             });
             break;
           case 'number':

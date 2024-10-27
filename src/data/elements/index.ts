@@ -1,3 +1,4 @@
+import { Color } from '../../tools/colors';
 import { generateIdentifier } from '../../tools/index';
 import { ImageHash } from '../images/index';
 import { lfGetItem, lfSetItem } from '../storage/index';
@@ -6,27 +7,31 @@ export interface NumberSetElementObject {
   id: string;
   type: 'number';
   number: number;
+  color: Color;
 }
 
 export interface TextSetElementObject {
   id: string;
   type: 'text';
   text: string;
+  color: Color;
 }
 
 export interface ImageSetElementObject {
   id: string;
   type: 'image';
   image: ImageHash;
+  color: Color;
 }
 
 export type SetElementObject = NumberSetElementObject | TextSetElementObject | ImageSetElementObject;
 
-export async function createElement(type: SetElementObject['type'], content: NumberSetElementObject['number'] | TextSetElementObject['text'] | ImageSetElementObject['image']): Promise<SetElementObject['id']> {
+export async function createElement(type: SetElementObject['type'], content: NumberSetElementObject['number'] | TextSetElementObject['text'] | ImageSetElementObject['image'], color: SetElementObject['color']): Promise<SetElementObject['id']> {
   const id = generateIdentifier('element');
   let object: SetElementObject = {
     id: id,
-    type: type
+    type: type,
+    color: color
   };
   switch (type) {
     case 'number':
