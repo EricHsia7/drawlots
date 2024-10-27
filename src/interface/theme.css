@@ -24,7 +24,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --d-cssvar-fafafd: ##000005;
+    --d-cssvar-fafafd: #000005;
     --d-cssvar-fafafd-r: 0;
     --d-cssvar-fafafd-g: 0;
     --d-cssvar-fafafd-b: 5;
