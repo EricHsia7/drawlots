@@ -6,6 +6,7 @@ import { loadCSS } from './interface/lazy-css';
 
 import './interface/theme.css';
 import './interface/index.css';
+import './interface/icons/index.css';
 
 import './interface/library/field.css';
 import './interface/library/body.css';
