@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .css_navigation_bar .css_navigation_button_group {
@@ -20,6 +19,7 @@
   /* box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.03); */
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
 }
 
 .css_navigation_bar .css_navigation_button_group .css_navigation_button {

@@ -9,6 +9,8 @@ let previousSets = [];
 
 const libraryField = documentQuerySelector('.css_library_field');
 const libraryBodyElement = elementQuerySelector(libraryField, '.css_library_body');
+const libraryTitleElement = elementQuerySelector(libraryBodyElement, '.css_library_title');
+const librarySetsElement = elementQuerySelector(libraryBodyElement, '.css_library_sets');
 
 function queryLibraryFieldSize(): FieldSize {
   return {
@@ -85,24 +87,24 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
 
   const setsQuantity = sets.length;
 
-  const currentSetSeatQuantity = elementQuerySelectorAll(libraryBodyElement, '.css_library_set').length;
+  const currentSetSeatQuantity = elementQuerySelectorAll(librarySetsElement, '.css_library_set').length;
   const capacity = currentSetSeatQuantity - setsQuantity;
   if (capacity < 0) {
     for (let i = 0; i < Math.abs(capacity); i++) {
       const thisSetElement = generateSetElement();
-      libraryBodyElement.appendChild(thisSetElement.element);
-      addRippleTo(elementQuerySelector(libraryBodyElement, `.css_library_set#${thisSetElement.id} .css_library_set_thumbnail`));
+      librarySetsElement.appendChild(thisSetElement.element);
+      addRippleTo(elementQuerySelector(librarySetsElement, `.css_library_set#${thisSetElement.id} .css_library_set_thumbnail`));
     }
   } else {
     for (let i = 0; i < Math.abs(capacity); i++) {
       const setIndex = currentSetSeatQuantity - 1 - i;
-      elementQuerySelectorAll(libraryBodyElement, '.css_library_set')[setIndex].remove();
+      elementQuerySelectorAll(librarySetsElement, '.css_library_set')[setIndex].remove();
     }
   }
 
   for (let i = 0; i < setsQuantity; i++) {
     const thisSetObject = sets[i];
-    const thisSetElement = elementQuerySelectorAll(libraryBodyElement, '.css_library_set')[i];
+    const thisSetElement = elementQuerySelectorAll(librarySetsElement, '.css_library_set')[i];
     if (previousSets.length < setsQuantity) {
       updateThumbnail(thisSetElement, thisSetObject, skeletonScreen);
       updateName(thisSetElement, thisSetObject, skeletonScreen);
