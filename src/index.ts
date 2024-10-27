@@ -10,6 +10,18 @@ import './interface/library/field.css';
 import './interface/library/body.css';
 import './interface/library/sets.css';
 
+import './interface/set/field.css';
+
+import './interface/add-element/field.css';
+
+import './interface/add-text-element/field.css';
+
+import './interface/add-number-element/field.css';
+
+import './interface/add-image-element/field.css';
+
+import './interface/navigation-bar/index.css';
+
 let drawlots_initialized = false;
 
 window.drawlots = {

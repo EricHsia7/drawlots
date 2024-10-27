@@ -1,0 +1,11 @@
+.css_navigation_bar {
+  position: fixed;
+  left: 15px;
+  bottom: calc(15px + var(--b-cssvar-safe-area-bottom));
+  width: calc(100% - 15px * 2);
+  height: 45px;
+  border-radius: 25px;
+  background: rgba(var(--d-ffffff-r), var(--d-ffffff-g), var(--d-ffffff-b), var(--d-cssvar-opacity-b));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
