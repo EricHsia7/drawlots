@@ -1,6 +1,6 @@
 import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
 import { listSets, SetObject } from '../../data/sets/index';
-import { getElement, SetElementObject } from '../../data/elements/index';
+import { getElement } from '../../data/elements/index';
 import { generateIdentifier } from '../../tools/index';
 import { FieldSize, GeneratedElement } from '../index';
 import { getImage } from '../../data/images/index';
@@ -8,6 +8,7 @@ import { getImage } from '../../data/images/index';
 let previousSets = [];
 
 const libraryField = documentQuerySelector('.css_library_field');
+const libraryBodyElement = elementQuerySelector(libraryField, '.css_library_body');
 
 function queryLibraryFieldSize(): FieldSize {
   return {
@@ -83,23 +84,23 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
 
   const setsQuantity = sets.length;
 
-  const currentSetSeatQuantity = elementQuerySelectorAll(libraryField, '.css_library_set').length;
+  const currentSetSeatQuantity = elementQuerySelectorAll(libraryBodyElement, '.css_library_set').length;
   const capacity = currentSetSeatQuantity - setsQuantity;
   if (capacity < 0) {
     for (let i = 0; i < Math.abs(capacity); i++) {
       const thisSetElement = generateSetElement();
-      libraryField.appendChild(thisSetElement.element);
+      libraryBodyElement.appendChild(thisSetElement.element);
     }
   } else {
     for (let i = 0; i < Math.abs(capacity); i++) {
       const setIndex = currentSetSeatQuantity - 1 - i;
-      elementQuerySelectorAll(libraryField, '.css_library_set')[setIndex].remove();
+      elementQuerySelectorAll(libraryBodyElement, '.css_library_set')[setIndex].remove();
     }
   }
 
   for (let i = 0; i < setsQuantity; i++) {
     const thisSetObject = sets[i];
-    const thisSetElement = elementQuerySelectorAll(libraryField, '.css_library_set')[i];
+    const thisSetElement = elementQuerySelectorAll(libraryBodyElement, '.css_library_set')[i];
     if (previousSets.length < setsQuantity) {
       updateThumbnail(thisSetElement, thisSetObject, skeletonScreen);
       updateName(thisSetElement, thisSetObject, skeletonScreen);
