@@ -17,6 +17,6 @@ function generateSetElement(setObject: SetObject): GeneratedElement {
   };
 }
 
-function initializeLibrary(): void {
+function updateLibrary(data: Array<SetObject>): void {
   
 }

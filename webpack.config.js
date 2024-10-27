@@ -140,7 +140,7 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.js|ts|jsx|tsx$/, // Use babel-loader for TypeScript files
-          exclude: [/node_modules/, /index\.html/],
+          exclude: [/node_modules/, /index\.html/], // prevent html from unexpectedly passing through these loader specifically for scripts
           use: {
             loader: 'babel-loader',
             options: {
@@ -201,11 +201,7 @@ module.exports = (env, argv) => {
     devServer: {
       contentBase: path.join(__dirname, 'dist'),
       hot: false
-    },
-    stats: {
-      children: true
-    },
-    cache: false
+    }
     // Add any additional plugins and configurations as needed
   };
 };

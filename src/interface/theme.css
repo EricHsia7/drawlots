@@ -1,3 +1,11 @@
 :root {
   --d-cssvar-ffffff: #ffffff;
+  --d-cssvar-ffffff-r: 255;
+  --d-cssvar-ffffff-g: 255;
+  --d-cssvar-ffffff-b: 255;
+
+  --d-cssvar-opacity-a: 1;
+  --d-cssvar-opacity-b: 0.8;
+  --d-cssvar-opacity-c: 0.6;
+  --d-cssvar-opacity-d: 0.45;
 }
