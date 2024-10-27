@@ -1,8 +1,8 @@
 :root {
-  --d-cssvar-fafbfd: #fafbfd;
-  --d-cssvar-fafbfd-r: 250;
-  --d-cssvar-fafbfd-g: 251;
-  --d-cssvar-fafbfd-b: 253;
+  --d-cssvar-fafafd: #fafafd;
+  --d-cssvar-fafafd-r: 250;
+  --d-cssvar-fafafd-g: 250;
+  --d-cssvar-fafafd-b: 253;
 
   --d-cssvar-ffffff: #ffffff;
   --d-cssvar-ffffff-r: 255;
@@ -24,10 +24,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --d-cssvar-fafbfd: #000305;
-    --d-cssvar-fafbfd-r: 0;
-    --d-cssvar-fafbfd-g: 3;
-    --d-cssvar-fafbfd-b: 5;
+    --d-cssvar-fafafd: ##000005;
+    --d-cssvar-fafafd-r: 0;
+    --d-cssvar-fafafd-g: 0;
+    --d-cssvar-fafafd-b: 5;
 
     --d-cssvar-ffffff: #0f0f11;
     --d-cssvar-ffffff-r: 15;
