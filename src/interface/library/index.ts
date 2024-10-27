@@ -20,7 +20,7 @@ function queryLibraryFieldSize(): FieldSize {
 export function resizeLibraryField(): void {
   const size = queryLibraryFieldSize();
   let setWidth = 0;
-  let setHeight = 200;
+  let setHeight = 250;
   if (size.width < 500) {
     setWidth = size.width;
   } else {
