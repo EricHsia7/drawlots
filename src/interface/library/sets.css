@@ -6,10 +6,6 @@
   float: left;
 }
 
-.css_library_field .css_library_body .css_library_set:first-child {
-  margin-top: 7.5px;
-}
-
 /* set > thumbnail */
 .css_library_field .css_library_body .css_library_set .css_library_set_thumbnail {
   position: absolute;
