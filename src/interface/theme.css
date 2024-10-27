@@ -1,23 +1,47 @@
 :root {
+  --d-cssvar-fafbfc: #fafbfc;
+  --d-cssvar-fafbfc-r: 250;
+  --d-cssvar-fafbfc-g: 251;
+  --d-cssvar-fafbfc-b: 252;
+
   --d-cssvar-ffffff: #ffffff;
   --d-cssvar-ffffff-r: 255;
   --d-cssvar-ffffff-g: 255;
   --d-cssvar-ffffff-b: 255;
 
-  --d-cssvar-f5f5f5: #f5f5f5;
-  --d-cssvar-f5f5f5-r: 245;
-  --d-cssvar-f5f5f5-g: 245;
-  --d-cssvar-f5f5f5-b: 245;
-
-  --d-cssvar-000000: #000000;
-  --d-cssvar-000000-r: 0;
-  --d-cssvar-000000-g: 0;
-  --d-cssvar-000000-b: 0;
+  --d-cssvar-000408: #000408;
+  --d-cssvar-000408-r: 0;
+  --d-cssvar-000408-g: 4;
+  --d-cssvar-000408-b: 8;
 
   --d-cssvar-opacity-a: 1;
   --d-cssvar-opacity-b: 0.85;
   --d-cssvar-opacity-c: 0.7;
   --d-cssvar-opacity-d: 0.45;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --d-cssvar-fafbfc: #000305;
+    --d-cssvar-fafbfc-r: 0;
+    --d-cssvar-fafbfc-g: 3;
+    --d-cssvar-fafbfc-b: 5;
+
+    --d-cssvar-ffffff: #1d1e1f;
+    --d-cssvar-ffffff-r: 29;
+    --d-cssvar-ffffff-g: 30;
+    --d-cssvar-ffffff-b: 31;
+
+    --d-cssvar-000408: #ffffff;
+    --d-cssvar-000408-r: 255;
+    --d-cssvar-000408-g: 255;
+    --d-cssvar-000408-b: 255;
+
+    --d-cssvar-opacity-a: 1;
+    --d-cssvar-opacity-b: 0.85;
+    --d-cssvar-opacity-c: 0.7;
+    --d-cssvar-opacity-d: 0.45;
+  }
 }
 
 :root {
