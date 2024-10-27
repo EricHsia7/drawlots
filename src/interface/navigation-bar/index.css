@@ -1,7 +1,7 @@
 .css_navigation_bar {
   position: fixed;
   left: 15px;
-  bottom: calc(15px + var(--b-cssvar-safe-area-bottom));
+  bottom: calc(20px + var(--b-cssvar-safe-area-bottom));
   width: calc(100% - 15px * 2);
   height: 50px;
   display: flex;
