@@ -3,16 +3,15 @@
   position: relative;
   width: var(--d-cssvar-set-width);
   width: var(--d-cssvar-set-heigt);
-  margin: 7.5px;
 }
 
 /* set > thumbnail */
 .css_library_field .css_library_body .css_library_set .css_library_set_thumbnail {
   position: absolute;
-  top: 15px;
-  left: 15px;
-  width: calc(100% - 15px * 2);
-  height: calc(100% - 15px - 35px);
+  top: 7.5px;
+  left: 7.5px;
+  width: calc(100% - 7.5px * 2);
+  height: calc(100% - 7.5px - 35px);
   /* top: 15px + name: 35px */
   border-radius: 15px;
   background: var(--d-cssvar-ffffff);
@@ -41,7 +40,7 @@
   position: absolute;
   left: 15px;
   bottom: 0px;
-  width: calc(100% - 15px * 2);
+  width: calc(100% - 7.5px * 2);
   height: 35px;
   font-size: 25px;
   display: flex;

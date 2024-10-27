@@ -18,13 +18,12 @@ function queryLibraryFieldSize(): FieldSize {
 
 export function resizeLibraryField(): void {
   const size = queryLibraryFieldSize();
-  const margin = 7.5;
   let setWidth = 0;
   let setHeight = 200;
   if (size.width < 500) {
-    setWidth = size.width - margin;
+    setWidth = size.width;
   } else {
-    setWidth = size.width / Math.floor(size.width / 300) - margin;
+    setWidth = size.width / Math.floor(size.width / 300);
   }
   libraryField.style.setProperty('--d-cssvar-set-width', `${setWidth}px`);
   libraryField.style.setProperty('--d-cssvar-set-height', `${setHeight}px`);
