@@ -1,0 +1,43 @@
+@property --d-cssvar-set-width {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+@property --d-cssvar-set-height {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+
+
+/* set */
+.css_library_field .css_library_body .css_library_set {
+  position: relative;
+  width: var(--d-cssvar-set-width);
+  width: var(--d-cssvar-set-heigt);
+}
+
+/* set > thumbnail */
+.css_library_field .css_library_body .css_library_set .css_library_set_thumbnail {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: calc(100% - 15px * 2);
+  height: calc(100% - 15px - 35px);
+  /* top: 15px + name: 35px */
+}
+
+/* set > name */
+.css_library_field .css_library_body .css_library_set .css_library_set_name {
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+  width: calc(100% - 15px * 2);
+  height: 35px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--d-cssvar-000000);
+}

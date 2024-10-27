@@ -4,6 +4,11 @@
   --d-cssvar-ffffff-g: 255;
   --d-cssvar-ffffff-b: 255;
 
+  --d-cssvar-000000: #000000;
+  --d-cssvar-000000-r: 0;
+  --d-cssvar-000000-g: 0;
+  --d-cssvar-000000-b: 0;
+
   --d-cssvar-opacity-a: 1;
   --d-cssvar-opacity-b: 0.8;
   --d-cssvar-opacity-c: 0.6;

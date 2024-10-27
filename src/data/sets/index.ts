@@ -9,7 +9,7 @@ export interface SetObject {
   thumbnail: number;
 }
 
-export async function createSets(): Promise<SetObject['id']> {
+export async function createSet(): Promise<SetObject['id']> {
   const id = generateIdentifier('set');
   let object: SetObject = {
     id: id,
