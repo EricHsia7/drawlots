@@ -13,6 +13,7 @@ import './interface/library/body.css';
 import './interface/library/sets.css';
 
 import './interface/set/field.css';
+import './interface/set/body.css';
 
 import './interface/add-element/field.css';
 
@@ -23,6 +24,7 @@ import './interface/add-number-element/field.css';
 import './interface/add-image-element/field.css';
 
 import './interface/navigation-bar/index.css';
+import { initializeNavigationBar } from './interface/navigation-bar/index';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
@@ -41,6 +43,7 @@ window.drawlots = {
           });
         }
       }
+      initializeNavigationBar();
       initializeLibrary();
     }
   },

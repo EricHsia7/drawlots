@@ -1,4 +1,5 @@
 const md5 = require('md5');
+const ripple = require('@erichsia7/ripple');
 
 export function generateIdentifier(prefix: string = ''): string {
   const characterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
@@ -13,4 +14,8 @@ export function generateIdentifier(prefix: string = ''): string {
 
 export function hash(content: any): string {
   return md5(content);
+}
+
+export function addRippleTo(element: HTMLElement, color?: string = 'var(--d-cssvar-000408)', duration?: number = 450, callback?: Function): void {
+  ripple.__addToSingleElement(element, color, duration, callback);
 }

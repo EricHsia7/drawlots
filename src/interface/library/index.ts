@@ -1,7 +1,7 @@
 import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
 import { listSets, SetObject } from '../../data/sets/index';
 import { getElement } from '../../data/elements/index';
-import { generateIdentifier } from '../../tools/index';
+import { addRippleTo, generateIdentifier } from '../../tools/index';
 import { FieldSize, GeneratedElement } from '../index';
 import { getImage } from '../../data/images/index';
 
@@ -91,6 +91,7 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
     for (let i = 0; i < Math.abs(capacity); i++) {
       const thisSetElement = generateSetElement();
       libraryBodyElement.appendChild(thisSetElement.element);
+      addRippleTo(elementQuerySelector(libraryBodyElement, `.css_library_set#${thisSetElement.id}`));
     }
   } else {
     for (let i = 0; i < Math.abs(capacity); i++) {
