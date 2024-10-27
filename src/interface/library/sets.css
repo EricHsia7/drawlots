@@ -1,13 +1,24 @@
-/* set */
-.css_library_field .css_library_body .css_library_set {
+/* sets */
+.css_library_field .css_library_body .css_library_sets {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-top: 7.5px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+}
+
+/* sets > set */
+.css_library_field .css_library_body .css_library_sets .css_library_set {
   position: relative;
   width: var(--d-cssvar-set-width);
   height: var(--d-cssvar-set-height);
   float: left;
 }
 
-/* set > thumbnail */
-.css_library_field .css_library_body .css_library_set .css_library_set_thumbnail {
+/* sets > set > thumbnail */
+.css_library_field .css_library_body .css_library_sets .css_library_set .css_library_set_thumbnail {
   position: absolute;
   top: 7.5px;
   left: 7.5px;
@@ -27,7 +38,7 @@
   justify-content: center;
 }
 
-.css_library_field .css_library_body .css_library_set .css_library_set_thumbnail img {
+.css_library_field .css_library_body .css_library_sets .css_library_set .css_library_set_thumbnail img {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -39,8 +50,8 @@
   -webkit-user-drag: none;
 }
 
-/* set > name */
-.css_library_field .css_library_body .css_library_set .css_library_set_name {
+/* sets > set > name */
+.css_library_field .css_library_body .css_library_sets .css_library_set .css_library_set_name {
   position: absolute;
   left: 15px;
   bottom: 0px;

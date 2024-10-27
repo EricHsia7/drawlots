@@ -8,10 +8,6 @@
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  box-sizing: border-box;
-  padding-top: 7.5px;
-  padding-left: 7.5px;
-  padding-right: 7.5px;
 }
 
 .css_library_field .css_library_body::-webkit-scrollbar {
