@@ -2,7 +2,7 @@
 .css_library_field .css_library_body .css_library_set {
   position: relative;
   width: var(--d-cssvar-set-width);
-  height: var(--d-cssvar-set-heigt);
+  height: var(--d-cssvar-set-height);
   float: left;
 }
 
