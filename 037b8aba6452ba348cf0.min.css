@@ -1,0 +1,2 @@
+:root{--a:#fff}body{background:var(--a);-webkit-font-smoothing:antialiased}body,body input[type=text]{font-family:Noto Sans TC,sans-serif;font-optical-sizing:auto;font-style:normal;font-weight:400;text-rendering:optimizeLegibility}body input[type=text]{font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased}body *{appearance:none;-webkit-appearance:none;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}.b{background:var(--d-ffffff);height:100%;left:0;position:fixed;top:0;width:100%}
+/*# sourceMappingURL=037b8aba6452ba348cf0.min.css.map*/
