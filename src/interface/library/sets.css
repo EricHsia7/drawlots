@@ -13,10 +13,9 @@
   left: 7.5px;
   width: calc(100% - 7.5px * 2);
   height: calc(100% - 7.5px - 35px);
-  /* top: 15px + name: 35px */
+  /* top: 7.5px + name: 35px */
   border-radius: 15px;
-  background: var(--d-cssvar-fafbfc);
-  border: 1px solid var(--d-cssvar-ffffff);
+  background: var(--d-cssvar-ffffff);
   box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.03);
   user-select: none;
   -webkit-user-select: none;
@@ -46,7 +45,7 @@
   bottom: 0px;
   width: calc(100% - 7.5px * 2);
   height: 35px;
-  font-size: 25px;
+  font-size: 23px;
   display: flex;
   align-items: center;
   font-weight: 500;
