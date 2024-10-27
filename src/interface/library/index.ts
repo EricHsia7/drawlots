@@ -23,7 +23,7 @@ export function resizeLibraryField(): void {
   if (size.width < 500) {
     setWidth = size.width;
   } else {
-    setWidth = size.width / Math.floor(size.width / 300);
+    setWidth = Math.floor(size.width / Math.floor(size.width / 300));
   }
   libraryField.style.setProperty('--d-cssvar-set-width', `${setWidth}px`);
   libraryField.style.setProperty('--d-cssvar-set-height', `${setHeight}px`);

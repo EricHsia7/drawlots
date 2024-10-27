@@ -2,7 +2,8 @@
 .css_library_field .css_library_body .css_library_set {
   position: relative;
   width: var(--d-cssvar-set-width);
-  width: var(--d-cssvar-set-heigt);
+  height: var(--d-cssvar-set-heigt);
+  float: left;
 }
 
 /* set > thumbnail */
@@ -21,6 +22,9 @@
   -webkit-user-select: none;
   font-size: 30px;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .css_library_field .css_library_body .css_library_set .css_library_set_thumbnail img {
