@@ -16,7 +16,7 @@
   display: inline-flex;
   border-radius: 25px;
   background: var(--d-cssvar-ffffff);
-  box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.03);
+  /* box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.03); */
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }

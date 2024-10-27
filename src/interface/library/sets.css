@@ -6,6 +6,10 @@
   float: left;
 }
 
+.css_library_field .css_library_body .css_library_set:first-child {
+  margin-top: 7.5px;
+}
+
 /* set > thumbnail */
 .css_library_field .css_library_body .css_library_set .css_library_set_thumbnail {
   position: absolute;
@@ -14,9 +18,10 @@
   width: calc(100% - 7.5px * 2);
   height: calc(100% - 7.5px - 35px);
   /* top: 7.5px + name: 35px */
-  border-radius: 15px;
+  border-radius: var(--d-cssvar-border-radius-large);
   background: var(--d-cssvar-ffffff);
-  box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.03);
+  color: var(--d-cssvar-000408);
+  /* box-shadow: 0px 0px 17px -10px rgba(0, 0, 0, 0.03); */
   user-select: none;
   -webkit-user-select: none;
   font-size: 30px;
