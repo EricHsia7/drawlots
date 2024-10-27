@@ -26,8 +26,8 @@ export function resizeLibraryField(): void {
   } else {
     setWidth = size.width / Math.floor(size.width / 300) - margin;
   }
-  libraryField.style.setProperty('--d-cssvar-set-width', setWidth);
-  libraryField.style.setProperty('--d-cssvar-set-height', setHeight);
+  libraryField.style.setProperty('--d-cssvar-set-width', `${setWidth}px`);
+  libraryField.style.setProperty('--d-cssvar-set-height', `${setHeight}px`);
 }
 
 function generateSetElement(): GeneratedElement {
