@@ -9,7 +9,6 @@ let previousSets = [];
 
 const libraryField = documentQuerySelector('.css_library_field');
 const libraryBodyElement = elementQuerySelector(libraryField, '.css_library_body');
-const libraryTitleElement = elementQuerySelector(libraryBodyElement, '.css_library_title');
 const librarySetsElement = elementQuerySelector(libraryBodyElement, '.css_library_sets');
 
 function queryLibraryFieldSize(): FieldSize {

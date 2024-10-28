@@ -1,9 +1,9 @@
 .css_library_field .css_library_body {
   position: absolute;
-  top: 0px;
+  top: 55px;
   left: 0px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 55px);
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;

@@ -13,7 +13,7 @@ import './interface/icons/index.css';
 
 import './interface/library/field.css';
 import './interface/library/body.css';
-import './interface/library/title.css';
+import './interface/library/head.css';
 import './interface/library/sets.css';
 
 import './interface/set/field.css';
