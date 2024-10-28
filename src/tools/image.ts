@@ -27,7 +27,7 @@ export async function getImageColors(dataURL: string): Promise<Array<Color>> {
       const img = new Image();
       img.onload = function () {
         const colorThief = new ColorThief();
-        const colors = colorThief.getPalette(img);
+        const colors = colorThief.getPalette(img, 10);
         let result = [];
         for (const color of colors) {
           result.push({ r: color[0], g: color[1], b: color[2] });
