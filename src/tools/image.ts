@@ -21,18 +21,26 @@ export async function getImageSize(dataURL: string): Promise<ImageSize> {
   });
 }
 
-export async function getImageColors(dataURL: string): Promise<Array<Color>> {
+export async function getImageColor(dataURL: string): Promise<Color> {
   return await new Promise((resolve, reject) => {
     try {
       const img = new Image();
       img.onload = function () {
         const colorThief = new ColorThief();
-        const colors = colorThief.getPalette(img, 10);
-        let result = [];
+        const colors = colorThief.getPalette(img, 5);
+        const colorsQuantity = colors.length;
+        let totalRed = 0;
+        let totalGreen = 0;
+        let totalBlue = 0;
         for (const color of colors) {
-          result.push({ r: color[0], g: color[1], b: color[2] });
+          totalRed += color[0];
+          totalGreen += color[1];
+          totalBlue += color[2];
         }
-        resolve(result);
+        const r = Math.floor(totalRed / colorsQuantity);
+        const g = Math.floor(totalGreen / colorsQuantity);
+        const b = Math.floor(totalBlue / colorsQuantity);
+        resolve({ r, g, b });
       };
       img.src = dataURL;
     } catch (error) {
