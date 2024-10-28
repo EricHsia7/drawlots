@@ -1,6 +1,6 @@
 import { Color } from './colors';
 
-import ColorThief from './node_modules/colorthief/dist/color-thief.mjs';
+const ColorThief = require('colorthief');
 
 export interface ImageSize {
   width: number;
@@ -26,8 +26,7 @@ export async function getImageColors(dataURL: string): Promise<Array<Color>> {
     try {
       const img = new Image();
       img.onload = function () {
-        const colorThief = new ColorThief();
-        colorThief.getColor(img).then((colors) => {
+        ColorThief.getColor(img).then((colors) => {
           let result = [];
           for (const color of colors) {
             result.push({ r: color[0], g: color[1], b: color[2] });
