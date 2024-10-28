@@ -139,7 +139,7 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.js|ts|jsx|tsx|mjs$/, // Use babel-loader for TypeScript files
+          test: /\.js|ts|jsx|tsx$/, // Use babel-loader for TypeScript files
           exclude: [/node_modules/, /index\.html/], // prevent html from unexpectedly passing through these loader specifically for scripts
           use: {
             loader: 'babel-loader',
@@ -156,7 +156,7 @@ module.exports = (env, argv) => {
       ]
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.css', '.mjs'], // File extensions to resolve
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'], // File extensions to resolve
       mainFields: ['browser', 'module', 'main']
     },
     optimization: {
