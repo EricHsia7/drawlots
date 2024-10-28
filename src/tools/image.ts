@@ -1,6 +1,6 @@
 import { Color } from './colors';
 
-const ColorThief = require('colorthief');
+import ColorThief from './node_modules/colorthief/dist/color-thief.mjs';
 
 export interface ImageSize {
   width: number;
