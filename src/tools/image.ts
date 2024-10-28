@@ -27,12 +27,13 @@ export async function getImageColors(dataURL: string): Promise<Array<Color>> {
       const img = new Image();
       img.onload = function () {
         const colorThief = new ColorThief();
-        const colors = await colorThief.getColor(img);
-        let result = [];
-        for (const color of colors) {
-          result.push({ r: color[0], g: color[1], b: color[2] });
-        }
-        resolve(result);
+        const colors = colorThief.getColor(img).then((e) => {
+          let result = [];
+          for (const color of colors) {
+            result.push({ r: color[0], g: color[1], b: color[2] });
+          }
+          resolve(result);
+        });
       };
       img.src = dataURL;
     } catch (error) {
