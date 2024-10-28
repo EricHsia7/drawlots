@@ -4,6 +4,8 @@ import { addElementToSet, createSet } from './data/sets/index';
 import { createElement } from './data/elements/index';
 import { loadCSS } from './interface/lazy-css';
 import { initializeNavigationBar } from './interface/navigation-bar/index';
+import { getImageColors } from './tools/image';
+import { predictTextColor } from './tools/colors';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -67,7 +69,9 @@ window.drawlots = {
           addElementToSet(setID, elementID);
         });
       });
-    }
+    },
+    getImageColors,
+    predictTextColor
   }
 };
 

@@ -43,6 +43,7 @@
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "md5": "^2.3.0",
-    "@erichsia7/ripple": "^1.1.7"
+    "@erichsia7/ripple": "^1.1.7",
+    "color-thief": "^2.2.5"
   }
 }
