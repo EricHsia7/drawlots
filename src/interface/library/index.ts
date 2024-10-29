@@ -92,7 +92,7 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
     for (let i = 0; i < Math.abs(capacity); i++) {
       const thisSetElement = generateSetElement();
       librarySetsElement.appendChild(thisSetElement.element);
-      addRippleTo(elementQuerySelector(librarySetsElement, `.css_library_set#${thisSetElement.id} .css_library_set_thumbnail`));
+      addRippleTo(elementQuerySelector(librarySetsElement, `.css_library_set#${thisSetElement.id}`));
     }
   } else {
     for (let i = 0; i < Math.abs(capacity); i++) {
