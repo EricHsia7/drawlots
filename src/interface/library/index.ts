@@ -108,13 +108,13 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
       updateThumbnail(thisSetElement, thisSetObject, skeletonScreen);
       updateName(thisSetElement, thisSetObject, skeletonScreen);
       updateOnclick(thisSetElement, thisSetObject, skeletonScreen);
-      updateSkeletonScreen(thisSetElement, true);
+      updateSkeletonScreen(thisSetElement, skeletonScreen);
     } else {
       if (!(previousSets[i] === thisSetObject)) {
         updateThumbnail(thisSetElement, thisSetObject, skeletonScreen);
         updateName(thisSetElement, thisSetObject, skeletonScreen);
         updateOnclick(thisSetElement, thisSetObject, skeletonScreen);
-        updateSkeletonScreen(thisSetElement, true);
+        updateSkeletonScreen(thisSetElement, skeletonScreen);
       }
     }
   }
