@@ -19,7 +19,7 @@
   --d-cssvar-opacity-c: 0.7;
   --d-cssvar-opacity-d: 0.45;
 
-  --d-cssvar-border-radius-large: 20px;
+  --d-cssvar-border-radius-large: 15px;
 }
 
 @media (prefers-color-scheme: dark) {
