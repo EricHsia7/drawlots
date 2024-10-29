@@ -9,6 +9,11 @@
   --d-cssvar-ffffff-g: 255;
   --d-cssvar-ffffff-b: 255;
 
+  --d-cssvar-ededf0: #ededf0;
+  --d-cssvar-ededf0-r: 237;
+  --d-cssvar-ededf0-g: 237;
+  --d-cssvar-ededf0-b: 240;
+
   --d-cssvar-000408: #000408;
   --d-cssvar-000408-r: 0;
   --d-cssvar-000408-g: 4;
@@ -33,6 +38,11 @@
     --d-cssvar-ffffff-r: 15;
     --d-cssvar-ffffff-g: 15;
     --d-cssvar-ffffff-b: 17;
+
+    --d-cssvar-ededf0: #1b1b1f;
+    --d-cssvar-ededf0-r: 27;
+    --d-cssvar-ededf0-g: 27;
+    --d-cssvar-ededf0-b: 31;
 
     --d-cssvar-000408: #ffffff;
     --d-cssvar-000408-r: 255;
