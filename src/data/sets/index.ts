@@ -47,7 +47,7 @@ export async function addElementToSet(setID: SetObject['id'], elementID: SetElem
   return true;
 }
 
-export async function drawFromSet(setID: SetObject['id'], options): Promise<SetElementObject> {
+export async function drawFromSet(setID: SetObject['id']): Promise<SetElementObject> {
   const set = await getSet(setID);
   const elementsLength = set.elements.length;
   if (elementsLength > 0) {
