@@ -10,23 +10,24 @@
 
 .css_library_field .css_library_head .css_library_button_left,
 .css_library_field .css_library_head .css_library_button_right {
-  width: 55px;
-  height: 55px;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
 }
 
 .css_library_field .css_library_head .css_library_button_left {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 12.5px;
+  left: 12.5px;
 }
 
 .css_library_field .css_library_head .css_library_button_right {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 12.5px;
+  right: 12.5px;
 }
 
 .css_library_field .css_library_head .css_library_button_left span.css_material_symbols_rounded,
