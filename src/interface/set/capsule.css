@@ -1,10 +1,13 @@
 /* capsule */
 .css_set_field .css_set_body .css_draw_from_set_capsule {
   position: relative;
-  width: 110px;
+  width: 120px;
   height: 45px;
   background: var(--d-cssvar-ffffff);
   border-radius: var(--d-cssvar-border-radius-large);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* capsule > draw from set */
@@ -12,13 +15,15 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 65px;
+  width: 75px;
   height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 19px;
   color: var(--d-cssvar-000408);
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 /* capsule > options */
@@ -31,6 +36,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_options span.css_material_symbols_rounded {
@@ -43,8 +50,10 @@
 .css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_from_set_capsule_separator {
   position: absolute;
   top: 3px;
-  left: calc(65px - 1px / 2);
+  left: calc(75px - 1px / 2);
   width: 1px;
   height: 39px;
   background: var(--d-cssvar-ededf0);
+  user-select: none;
+  -webkit-user-select: none;
 }
