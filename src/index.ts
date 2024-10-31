@@ -61,7 +61,7 @@ window.drawlots = {
       initializeLibraryRipple();
       */
       initializeSetCreatorRipple();
-      initializeSetRipple();
+      // initializeSetRipple();
     }
   },
   secondlyInitialize: function () {
