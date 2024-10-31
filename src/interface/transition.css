@@ -1,11 +1,11 @@
 .css_transition_fade_in_preparation {
-  display: block;
+  display: block !important;
   opacity: 0;
 }
 
 .css_transition_fade_in {
   animation-name: fade-in;
-  animation-duration: 450ms;
+  animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-direction: normal;
@@ -22,13 +22,13 @@
 }
 
 .css_transition_fade_out_preparation {
-  display: block;
+  display: block !important;
   opacity: 1;
 }
 
 .css_transition_fade_out {
   animation-name: fade-out;
-  animation-duration: 450ms;
+  animation-duration: 300ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-direction: normal;

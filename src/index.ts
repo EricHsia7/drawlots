@@ -10,6 +10,7 @@ import { closeSet, openSet } from './interface/set/index';
 
 import './interface/theme.css';
 import './interface/index.css';
+import './interface/transition.css';
 import './interface/icons/index.css';
 
 import './interface/library/field.css';
@@ -35,7 +36,6 @@ import './interface/add-number-element/field.css';
 
 import './interface/add-image-element/field.css';
 
-import './interface/transition.css';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
