@@ -24,6 +24,7 @@ import './interface/set-creator/field.css';
 import './interface/set-creator/head.css';
 import './interface/set-creator/body.css';
 import './interface/set-creator/groups.css';
+import './interface/set-creator/set-name.css';
 
 import './interface/add-element/field.css';
 

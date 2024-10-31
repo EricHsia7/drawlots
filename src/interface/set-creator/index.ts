@@ -4,11 +4,11 @@ import { openSet } from '../set/index';
 
 const setCreatorField = documentQuerySelector('.css_set_creator_field');
 const setCreatorBodyElement = elementQuerySelector(setCreatorField, '.css_set_creator_body');
-const setCreatorGroups = elementQuerySelector(setCreatorBodyElement, '.css_set_creator_groups');
-const nameInputElement = elementQuerySelector(setCreatorGroups, '.css_set_creator_group[name="set-name"] .css_set_creator_group_body input');
+const setCreatorGroupsElement = elementQuerySelector(setCreatorBodyElement, '.css_set_creator_groups');
+const nameInputElement = elementQuerySelector(setCreatorGroupsElement, '.css_set_creator_group[name="set-name"] .css_set_creator_group_body input');
 
 function initializeSetCreator(): void {
-  nameInputElement.innerText = '';
+  nameInputElement.value = '';
 }
 
 export function openSetCreator(): void {
@@ -21,7 +21,7 @@ export function closeSetCreator(): void {
 }
 
 export function createFormulatedSet(): void {
-  const name = String(nameInputElement.innerText);
+  const name = String(nameInputElement.value);
   createSet(name).then((result) => {
     openSet();
   });
