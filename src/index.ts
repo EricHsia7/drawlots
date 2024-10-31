@@ -6,7 +6,7 @@ import { loadCSS } from './interface/lazy-css';
 import { getImageColor } from './tools/image';
 import { predictTextColor } from './tools/colors';
 import { closeSetCreator, createFormulatedSet, initializeSetCreatorRipple, openSetCreator } from './interface/set-creator/index';
-import { closeSet, openSet } from './interface/set/index';
+import { closeSet, initializeSetRipple, openSet } from './interface/set/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -59,9 +59,9 @@ window.drawlots = {
       // ripple
       /*
       initializeLibraryRipple();
-      initializeSetRipple();
       */
       initializeSetCreatorRipple();
+      initializeSetRipple();
     }
   },
   secondlyInitialize: function () {
