@@ -9,12 +9,12 @@ export interface SetObject {
   thumbnail: number;
 }
 
-export async function createSet(): Promise<SetObject['id']> {
+export async function createSet(name: SetObject['name']? = 'Untitled Set'): Promise<SetObject['id']> {
   const id = generateIdentifier('set');
   let object: SetObject = {
     id: id,
     elements: [],
-    name: 'Untitled Set',
+    name: name,
     thumbnail: 0
   };
   await lfSetItem(0, id, JSON.stringify(object));

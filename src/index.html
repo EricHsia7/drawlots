@@ -37,21 +37,21 @@
   <body>
     <!-- library -->
     <div class="css_library_field">
+      <div class="css_library_body">
+        <div class="css_library_sets"></div>
+      </div>
       <div class="css_library_head">
         <div class="css_library_button_left" onclick="">
           <span class="css_material_symbols_rounded">page_info</span>
         </div>
         <div class="css_library_title">Drawlots</div>
-        <div class="css_library_button_right" onclick="">
+        <div class="css_library_button_right" onclick="drawlots.sets.openSetCreator()">
           <span class="css_material_symbols_rounded">edit</span>
         </div>
       </div>
-      <div class="css_library_body">
-        <div class="css_library_sets"></div>
-      </div>
     </div>
 
-    <!-- set -->
+    <!-- sets -->
     <div class="css_set_field" displayed="false">
       <div class="css_set_body">
         <div class="css_draw_from_set_capsule">
@@ -63,10 +63,24 @@
       </div>
     </div>
 
-    <!-- set creator -->
     <div class="css_set_creator_field" displayed="false">
+      <div class="css_set_creator_body">
+        <div class="css_set_creator_groups">
+          <div class="css_set_creator_group" group="set-name">
+            <div class="css_set_creator_group_head">
+              <div class="css_set_creator_group_icon">
+                <span class="css_material_symbols_rounded">match_case</span>
+              </div>
+              <div class="css_set_creator_group_name">Set Name</div>
+            </div>
+            <div class="css_set_creator_group_body">
+              <input type="text" placeholder="Name" />
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="css_set_creator_head">
-        <div class="css_set_creator_button_left" onclick="drawlots.setCreator.closeSetCreator()">
+        <div class="css_set_creator_button_left" onclick="drawlots.sets.closeSetCreator()">
           <span class="css_material_symbols_rounded">arrow_back_ios_new</span>
         </div>
         <div class="css_set_creator_title">Create Set</div>
@@ -74,7 +88,6 @@
           <span class="css_material_symbols_rounded">check</span>
         </div>
       </div>
-      <div class="css_set_creator_body"></div>
     </div>
 
     <div class="css_add_element_field" displayed="false">

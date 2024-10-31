@@ -5,6 +5,8 @@ import { createElement } from './data/elements/index';
 import { loadCSS } from './interface/lazy-css';
 import { getImageColor } from './tools/image';
 import { predictTextColor } from './tools/colors';
+import { closeSetCreator, openSetCreator } from './interface/set-ceator/index';
+import { closeSet, openSet } from './interface/set/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -21,6 +23,7 @@ import './interface/set/body.css';
 import './interface/set-creator/field.css';
 import './interface/set-creator/head.css';
 import './interface/set-creator/body.css';
+import './interface/set-creator/groups.css';
 
 import './interface/add-element/field.css';
 
@@ -57,7 +60,12 @@ window.drawlots = {
       loadCSS('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', 'material_symbols');
     }
   },
-  sets: {},
+  sets: {
+    openSet,
+    closeSet,
+    openSetCreator,
+    closeSetCreator
+  },
   test: {
     storeImage,
     createSet,
