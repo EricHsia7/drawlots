@@ -1,12 +1,8 @@
 import { initializeLibrary, initializeLibraryRipple, resizeLibraryField } from './interface/library/index';
-import { storeImage } from './data/images/index';
-import { addElementToSet, createSet } from './data/sets/index';
-import { createElement } from './data/elements/index';
 import { loadCSS } from './interface/lazy-css';
-import { getImageColor } from './tools/image';
-import { predictTextColor } from './tools/colors';
 import { closeSetCreator, createFormulatedSet, initializeSetCreatorRipple, openSetCreator } from './interface/set-creator/index';
 import { closeSet, initializeSetRipple, openSet } from './interface/set/index';
+import { closeDrawResult, openDrawResult } from './interface/draw-result/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -81,20 +77,9 @@ window.drawlots = {
     closeSetCreator,
     createFormulatedSet
   },
-  test: {
-    storeImage,
-    createSet,
-    createElement,
-    addElementToSet,
-    testElement: function (text) {
-      createSet().then((setID) => {
-        createElement('text', text).then((elementID) => {
-          addElementToSet(setID, elementID);
-        });
-      });
-    },
-    getImageColor,
-    predictTextColor
+  drawResult: {
+    openDrawResult,
+    closeDrawResult
   }
 };
 

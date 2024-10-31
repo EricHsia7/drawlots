@@ -29,6 +29,7 @@ export function closeSet(): void {
 async function initializeSet(setID: SetObject['id']): void {
   const set = await getSet(setID);
   setHeadTitleElement.innerText = set.name;
+  drawFromSetElement.setAttribute('onclick', `drawlots.drawResult.openDrawResult('${setID}')`);
 }
 
 export function initializeSetRipple(): void {
