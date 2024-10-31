@@ -89,10 +89,10 @@ window.drawlots = {
   },
   test: {
     create: async function () {
-      const setID = await createSet('test');
-      const A = await createElement('text', 'A');
-      const B = await createElement('text', 'B');
-      const C = await createElement('text', 'C');
+      const setID = await createSet('test ABC');
+      const A = await createElement('text', 'A', { r: 173, g: 217, b: 244 });
+      const B = await createElement('text', 'B', { r: 71, g: 108, b: 155 });
+      const C = await createElement('text', 'C', { r: 152, g: 68, b: 71 });
       addElementToSet(setID, A);
       addElementToSet(setID, B);
       addElementToSet(setID, C);
