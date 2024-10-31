@@ -1,0 +1,11 @@
+.css_draw_result_field .css_draw_result_body {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  width: 100%;
+  height: calc(100% - 55px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--d-cssvar-fafafd);
+}
