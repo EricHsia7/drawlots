@@ -1,5 +1,5 @@
 import { generateIdentifier } from '../../tools/index';
-import { SetElementObject } from '../elements/index';
+import { getElement, SetElementObject } from '../elements/index';
 import { lfGetItem, lfListItemKeys, lfSetItem } from '../storage/index';
 
 export interface SetObject {
@@ -45,4 +45,15 @@ export async function addElementToSet(setID: SetObject['id'], elementID: SetElem
   }
   await lfSetItem(0, setID, JSON.stringify(currentSet));
   return true;
+}
+
+export async function drawFromSet(setID: SetObject['id'], options): Promise<SetElementObject> {
+  const set = await getSet(setID);
+  const elementsLength = set.elements.length;
+  if (elementsLength > 0) {
+    const randomIndex = Math.round((elementsLength - 1) * Math.random());
+    const elementID = set.elements[randomIndex];
+    const result = await getElement(elementID);
+    return result;
+  }
 }
