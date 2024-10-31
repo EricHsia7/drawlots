@@ -1,3 +1,15 @@
+@property --d-draw-result-background {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: var(--d-cssvar-fafafd);
+}
+
+@property --d-draw-result-text {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: var(--d-cssvar-000408);
+}
+
 .css_draw_result_field {
   position: fixed;
   top: 0px;

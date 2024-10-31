@@ -7,5 +7,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--d-cssvar-fafafd);
+  background: var(--d-draw-result-background);
 }

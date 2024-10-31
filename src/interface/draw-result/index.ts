@@ -1,5 +1,6 @@
 import { TextSetElementObject } from '../../data/elements/index';
 import { drawFromSet, SetObject } from '../../data/sets/index';
+import { getColorPack } from '../../tools/colors';
 import { addRippleTo, generateIdentifier } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
 import { fadeInElement, fadeOutElement, GeneratedElement, pushPageHistory, revokePageHistory } from '../index';
@@ -23,6 +24,7 @@ function generateTextElement(textSetElementObject: TextSetElementObject): Genera
 
 async function initializeDrawResult(setID: SetObject['id']): void {
   const result = await drawFromSet(setID);
+  const colorPack = getColorPack(result.color);
   let element = {};
   switch (result.type) {
     case 'text':
@@ -37,6 +39,8 @@ async function initializeDrawResult(setID: SetObject['id']): void {
   }
   drawResultBodyElement.innerHTML = '';
   drawResultBodyElement.appendChild(element.element);
+  drawResultField.style.setProperty('--d-draw-result-background', colorPack.background);
+  drawResultField.style.setProperty('--d-draw-result-text', colorPack.text);
 }
 
 export function openDrawResult(setID: SetObject['id']): void {

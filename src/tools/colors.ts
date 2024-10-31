@@ -20,3 +20,20 @@ export function predictTextColor(color: Color): number {
     };
   }
 }
+
+export function ColorToString(color: Color): string {
+  return `rgba(${color.r}, ${color.g}, ${color.b}, 1)`;
+}
+
+interface ColorPack {
+  background: string;
+  text: string;
+}
+
+export function getColorPack(color: Color): ColorPack {
+  const result: ColorPack = {
+    background: ColorToString(color),
+    text: ColorToString(predictTextColor(color))
+  };
+  return result;
+}

@@ -2,7 +2,7 @@
   position: relative;
   font-size: 30px;
   font-weight: 700;
-  color: var(--d-cssvar-000408);
+  color: var(--d-draw-result-text);
   -webkit-user-select: none;
   user-select: none;
 }

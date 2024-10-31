@@ -2,7 +2,7 @@
   position: relative;
   font-size: 25px;
   font-weight: 600;
-  color: var(--d-cssvar-000408);
+  color: var(--d-draw-result-text);
   padding: 10px;
   display: flex;
   align-items: center;
