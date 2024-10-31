@@ -39,6 +39,8 @@ import './interface/draw-result/body.css';
 import './interface/draw-result/text.css';
 import './interface/draw-result/image.css';
 import './interface/draw-result/number.css';
+import { createElement } from './data/elements/index';
+import { addElementToSet, createSet } from './data/sets/index';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
@@ -84,6 +86,17 @@ window.drawlots = {
   drawResult: {
     openDrawResult,
     closeDrawResult
+  },
+  test: {
+    create: async function () {
+      const setID = await createSet('test');
+      const A = await createElement('text', 'A');
+      const B = await createElement('text', 'B');
+      const C = await createElement('text', 'C');
+      addElementToSet(setID, A);
+      addElementToSet(setID, B);
+      addElementToSet(setID, C);
+    }
   }
 };
 
