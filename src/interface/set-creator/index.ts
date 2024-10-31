@@ -39,6 +39,16 @@ export function createFormulatedSet(): void {
 }
 
 export function initializeSetCreatorRipple(): void {
-  addRippleTo(leftButtonElement);
-  addRippleTo(rightButtonElement);
+  console.log(1);
+  try {
+    console.log(2);
+    addRippleTo(leftButtonElement);
+    console.log(3);
+    addRippleTo(rightButtonElement);
+    console.log(4);
+  } catch (err) {
+    console.log(5);
+    console.log(err);
+  }
+  console.log(6);
 }
