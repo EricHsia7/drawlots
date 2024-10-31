@@ -1,3 +1,4 @@
+import { initializeLibrary } from './library/index';
 import { closeSetCreator, openSetCreator } from './set-creator/index';
 import { closeSet, openSet } from './set/index';
 
@@ -58,6 +59,7 @@ export function openPreviousPage(): void {
     pageHistory.pop();
     switch (previousPage) {
       case 'Library':
+        initializeLibrary();
         break;
       case 'Set':
         openSet();
