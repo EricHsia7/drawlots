@@ -38,7 +38,7 @@ export async function getSet(id: SetObject['id']): Promise<SetObject> {
   return parsedItem;
 }
 
-export async function addElementToSet(setID: SetObject['id'], elementID: SetElementObject['id']): boolean {
+export async function addElementToSet(setID: SetObject['id'], elementID: SetElementObject['id']): Promise<boolean> {
   let currentSet = await getSet(setID);
   if (currentSet.elements.indexOf(elementID) < 0) {
     currentSet.elements.push(elementID);
