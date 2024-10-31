@@ -10,6 +10,7 @@ import { closeSet, openSet } from './interface/set/index';
 
 import './interface/theme.css';
 import './interface/index.css';
+import './interface/transition.css';
 import './interface/icons/index.css';
 
 import './interface/library/field.css';
