@@ -2,7 +2,7 @@ import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } 
 import { listSets, SetObject } from '../../data/sets/index';
 import { getElement } from '../../data/elements/index';
 import { addRippleTo, generateIdentifier } from '../../tools/index';
-import { FieldSize, GeneratedElement } from '../index';
+import { fadeInElement, fadeOutElement, FieldSize, GeneratedElement } from '../index';
 import { getImage } from '../../data/images/index';
 
 let previousSets = [];
@@ -13,6 +13,15 @@ const librarySetsElement = elementQuerySelector(libraryBodyElement, '.css_librar
 const libraryHeadElement = elementQuerySelector(libraryField, '.css_library_head');
 const leftButtonElement = elementQuerySelector(libraryHeadElement, '.css_library_button_left');
 const rightButtonElement = elementQuerySelector(libraryHeadElement, '.css_library_button_right');
+
+export function openLibrary(): void {
+  fadeInElement(libraryField);
+  initializeLibrary();
+}
+
+export function closeLibrary(): void {
+  fadeOutElement(libraryField);
+}
 
 function queryLibraryFieldSize(): FieldSize {
   return {
