@@ -42,7 +42,6 @@ export function closePreviousPage(): void {
         closeLibrary();
         break;
       case 'Set':
-        closeSet();
         break;
       case 'SetCreator':
         closeSetCreator();
@@ -63,7 +62,6 @@ export function openPreviousPage(): void {
         openLibrary();
         break;
       case 'Set':
-        openSet();
         break;
       case 'SetCreator':
         openSetCreator();
