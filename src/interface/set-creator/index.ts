@@ -8,9 +8,11 @@ const setCreatorField = documentQuerySelector('.css_set_creator_field');
 const setCreatorBodyElement = elementQuerySelector(setCreatorField, '.css_set_creator_body');
 const setCreatorGroupsElement = elementQuerySelector(setCreatorBodyElement, '.css_set_creator_groups');
 const nameInputElement = elementQuerySelector(setCreatorGroupsElement, '.css_set_creator_group[group="set-name"] .css_set_creator_group_body input');
+/*
 const setCreatorHeadElement = elementQuerySelector(setCreatorField, '.css_set_creator_head');
 const leftButtonElement = elementQuerySelector(setCreatorHeadElement, '.css_set_creator_button_left');
 const rightButtonElement = elementQuerySelector(setCreatorHeadElement, '.css_set_creator_button_right');
+*/
 
 function initializeSetCreator(): void {
   nameInputElement.value = '';
@@ -37,7 +39,9 @@ export function createFormulatedSet(): void {
   });
 }
 
+/*
 export function initializeSetCreatorRipple(): void {
   addRippleTo(leftButtonElement);
   addRippleTo(rightButtonElement);
 }
+*/

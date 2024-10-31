@@ -1,12 +1,12 @@
-import { initializeLibrary, initializeLibraryRipple, resizeLibraryField } from './interface/library/index';
+import { initializeLibrary, resizeLibraryField } from './interface/library/index';
 import { storeImage } from './data/images/index';
 import { addElementToSet, createSet } from './data/sets/index';
 import { createElement } from './data/elements/index';
 import { loadCSS } from './interface/lazy-css';
 import { getImageColor } from './tools/image';
 import { predictTextColor } from './tools/colors';
-import { closeSetCreator, createFormulatedSet, initializeSetCreatorRipple, openSetCreator } from './interface/set-creator/index';
-import { closeSet, initializeSetRipple, openSet } from './interface/set/index';
+import { closeSetCreator, createFormulatedSet, openSetCreator } from './interface/set-creator/index';
+import { closeSet, openSet } from './interface/set/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -57,9 +57,11 @@ window.drawlots = {
       initializeLibrary();
 
       // ripple
+      /*
       initializeLibraryRipple();
       initializeSetRipple();
       initializeSetCreatorRipple();
+      */
     }
   },
   secondlyInitialize: function () {
