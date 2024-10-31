@@ -1,0 +1,6 @@
+.css_draw_result_field .css_draw_result_body .css_draw_result_number {
+  position: relative;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--d-cssvar-000408);
+}

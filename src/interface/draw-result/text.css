@@ -1,0 +1,13 @@
+.css_draw_result_field .css_draw_result_body .css_draw_result_text {
+  position: relative;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--d-cssvar-000408);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-break: break-all;
+  white-space: pre-line;
+  box-sizing: border-box;
+}

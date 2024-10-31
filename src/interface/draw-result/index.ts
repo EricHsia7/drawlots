@@ -2,7 +2,7 @@ import { TextSetElementObject } from '../../data/elements/index';
 import { drawFromSet, SetObject } from '../../data/sets/index';
 import { generateIdentifier } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
-import { closePreviousPage, fadeInElement, fadeOutElement, GeneratedElement, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
+import { fadeInElement, fadeOutElement, GeneratedElement, pushPageHistory, revokePageHistory } from '../index';
 
 const drawResultField = documentQuerySelector('.css_draw_result_field');
 const drawResultBodyElement = elementQuerySelector(drawResultField, '.css_draw_result_body');

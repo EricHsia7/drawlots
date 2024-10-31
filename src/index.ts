@@ -36,6 +36,9 @@ import './interface/add-image-element/field.css';
 import './interface/draw-result/field.css';
 import './interface/draw-result/head.css';
 import './interface/draw-result/body.css';
+import './interface/draw-result/text.css';
+import './interface/draw-result/image.css';
+import './interface/draw-result/number.css';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
