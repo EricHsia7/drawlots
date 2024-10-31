@@ -28,6 +28,7 @@ export function closeSetCreator(): void {
 export function createFormulatedSet(): void {
   const name = String(nameInputElement.value);
   createSet(name).then((result) => {
+    closeSetCreator();
     openSet(result);
   });
 }
