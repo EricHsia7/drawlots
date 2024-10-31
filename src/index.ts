@@ -57,11 +57,9 @@ window.drawlots = {
       initializeLibrary();
 
       // ripple
-      /*
       initializeLibraryRipple();
       initializeSetRipple();
       initializeSetCreatorRipple();
-      */
     }
   },
   secondlyInitialize: function () {
