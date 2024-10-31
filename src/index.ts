@@ -60,8 +60,8 @@ window.drawlots = {
       /*
       initializeLibraryRipple();
       initializeSetRipple();
-      initializeSetCreatorRipple();
       */
+      initializeSetCreatorRipple();
     }
   },
   secondlyInitialize: function () {
