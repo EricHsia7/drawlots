@@ -1,0 +1,37 @@
+.css_set_field .css_set_body .css_draw_from_set_capsule {
+  position: relative;
+  width: 110px;
+  height: 45px;
+  background: var(--d-cssvar-ffffff);
+  border-radius: var(--d-cssvar-border-radius-large);
+}
+
+.css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_from_set {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 65px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+  color: var(--d-cssvar-000408);
+}
+
+.css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_options {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_options span.css_material_symbols_rounded {
+  height: 20px;
+  width: 20px;
+  color: var(--d-cssvar-000408);
+}

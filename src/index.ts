@@ -21,6 +21,7 @@ import './interface/library/sets.css';
 import './interface/set/field.css';
 import './interface/set/head.css';
 import './interface/set/body.css';
+import './interface/set/capsule.css';
 
 import './interface/set-creator/field.css';
 import './interface/set-creator/head.css';

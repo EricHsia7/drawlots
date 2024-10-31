@@ -14,6 +14,10 @@
   background: var(--d-cssvar-ffffff);
 }
 
+.css_library_field .css_library_body .css_library_sets .css_library_set:last-child {
+  margin-bottom: calc(5px + var(--d-cssvar-safe-area-bottom));
+}
+
 /* sets > set > thumbnail */
 .css_library_field .css_library_body .css_library_sets .css_library_set .css_library_set_thumbnail {
   position: absolute;
