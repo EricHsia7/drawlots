@@ -10,8 +10,8 @@ const setCreatorGroupsElement = elementQuerySelector(setCreatorBodyElement, '.cs
 const nameInputElement = elementQuerySelector(setCreatorGroupsElement, '.css_set_creator_group[group="set-name"] .css_set_creator_group_body input');
 
 const setCreatorHeadElement = elementQuerySelector(setCreatorField, '.css_set_creator_head');
-const leftButtonElement = elementQuerySelector(setCreatorHeadElement, '.css_set_creator_button_left');
-const rightButtonElement = elementQuerySelector(setCreatorHeadElement, '.css_set_creator_button_right');
+const setCreatorHeadLeftButtonElement = elementQuerySelector(setCreatorHeadElement, '.css_set_creator_button_left');
+const setCreatorHeadRightButtonElement = elementQuerySelector(setCreatorHeadElement, '.css_set_creator_button_right');
 
 function initializeSetCreator(): void {
   nameInputElement.value = '';
@@ -39,16 +39,6 @@ export function createFormulatedSet(): void {
 }
 
 export function initializeSetCreatorRipple(): void {
-  console.log(1);
-  try {
-    console.log(2);
-    addRippleTo(leftButtonElement);
-    console.log(3);
-    addRippleTo(rightButtonElement);
-    console.log(4);
-  } catch (err) {
-    console.log(5);
-    console.log(err);
-  }
-  console.log(6);
+  addRippleTo(setCreatorHeadLeftButtonElement);
+  addRippleTo(setCreatorHeadRightButtonElement);
 }

@@ -5,8 +5,8 @@ import { closePreviousPage, fadeInElement, fadeOutElement, openPreviousPage, pus
 
 const setField = documentQuerySelector('.css_set_field');
 const setHeadElement = elementQuerySelector(setField, '.css_set_head');
-const leftButtonElement = elementQuerySelector(setHeadElement, '.css_set_button_left');
-const rightButtonElement = elementQuerySelector(setHeadElement, '.css_set_button_right');
+const setHeadLeftButtonElement = elementQuerySelector(setHeadElement, '.css_set_button_left');
+const setHeadRightButtonElement = elementQuerySelector(setHeadElement, '.css_set_button_right');
 
 export function openSet(setID: SetObject['id']): void {
   pushPageHistory('Set');
@@ -21,6 +21,6 @@ export function closeSet(): void {
 }
 
 export function initializeSetRipple(): void {
-  addRippleTo(leftButtonElement);
-  addRippleTo(rightButtonElement);
+  addRippleTo(setHeadLeftButtonElement);
+  addRippleTo(setHeadRightButtonElement);
 }
