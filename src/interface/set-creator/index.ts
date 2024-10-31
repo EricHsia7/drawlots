@@ -1,6 +1,6 @@
 import { createSet } from '../../data/sets/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
-import { closePreviousPage, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
+import { closePreviousPage, openPreviousPage, pushPageHistory } from '../index';
 import { openSet } from '../set/index';
 
 const setCreatorField = documentQuerySelector('.css_set_creator_field');
