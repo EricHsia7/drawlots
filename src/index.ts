@@ -18,6 +18,10 @@ import './interface/library/sets.css';
 import './interface/set/field.css';
 import './interface/set/body.css';
 
+import './interface/set-creator/field.css';
+import './interface/set-creator/head.css';
+import './interface/set-creator/body.css';
+
 import './interface/add-element/field.css';
 
 import './interface/add-text-element/field.css';
