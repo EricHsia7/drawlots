@@ -34,7 +34,7 @@ async function initializeDrawResult(setID: SetObject['id']): void {
       break;
   }
   drawResultBodyElement.innerHTML = '';
-  drawResultBodyElement.appendChild(element);
+  drawResultBodyElement.appendChild(element.element);
 }
 
 export function openDrawResult(setID: SetObject['id']): void {
