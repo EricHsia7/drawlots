@@ -40,12 +40,12 @@
       <div class="css_library_body">
         <div class="css_library_sets"></div>
       </div>
-      <div class="css_library_head">
-        <div class="css_library_button_left" onclick="">
+      <div class="css_set_head">
+        <div class="css_set_button_left" onclick="">
           <span class="css_material_symbols_rounded">page_info</span>
         </div>
-        <div class="css_library_title">Drawlots</div>
-        <div class="css_library_button_right" onclick="drawlots.sets.openSetCreator()">
+        <div class="css_set_title">Drawlots</div>
+        <div class="css_set_button_right" onclick="drawlots.sets.openSetCreator()">
           <span class="css_material_symbols_rounded">edit</span>
         </div>
       </div>
@@ -59,6 +59,15 @@
           <div class="css_draw_options">
             <span class="css_material_symbols_rounded">page_info</span>
           </div>
+        </div>
+      </div>
+      <div class="css_set_head">
+        <div class="css_set_button_left" onclick="drawlots.sets.closeSet()">
+          <span class="css_material_symbols_rounded">arrow_back_ios_new</span>
+        </div>
+        <div class="css_set_title">Set</div>
+        <div class="css_set_button_right" onclick="drawlots.sets.openSetEditor()">
+          <span class="css_material_symbols_rounded">edit</span>
         </div>
       </div>
     </div>
@@ -79,6 +88,7 @@
           </div>
         </div>
       </div>
+
       <div class="css_set_creator_head">
         <div class="css_set_creator_button_left" onclick="drawlots.sets.closeSetCreator()">
           <span class="css_material_symbols_rounded">arrow_back_ios_new</span>
