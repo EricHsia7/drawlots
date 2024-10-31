@@ -1,3 +1,5 @@
 .css_draw_result_field .css_draw_result_body .css_draw_result_image {
   position: relative;
+  -webkit-user-select: none;
+  user-select: none;
 }

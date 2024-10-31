@@ -2,7 +2,7 @@ import { initializeLibrary, initializeLibraryRipple, resizeLibraryField } from '
 import { loadCSS } from './interface/lazy-css';
 import { closeSetCreator, createFormulatedSet, initializeSetCreatorRipple, openSetCreator } from './interface/set-creator/index';
 import { closeSet, initializeSetRipple, openSet } from './interface/set/index';
-import { closeDrawResult, openDrawResult } from './interface/draw-result/index';
+import { closeDrawResult, initializeDrawResultRipple, openDrawResult } from './interface/draw-result/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -64,6 +64,7 @@ window.drawlots = {
       initializeLibraryRipple();
       initializeSetCreatorRipple();
       initializeSetRipple();
+      initializeDrawResultRipple();
     }
   },
   secondlyInitialize: function () {

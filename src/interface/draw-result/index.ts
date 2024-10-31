@@ -1,11 +1,13 @@
 import { TextSetElementObject } from '../../data/elements/index';
 import { drawFromSet, SetObject } from '../../data/sets/index';
-import { generateIdentifier } from '../../tools/index';
+import { addRippleTo, generateIdentifier } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
 import { fadeInElement, fadeOutElement, GeneratedElement, pushPageHistory, revokePageHistory } from '../index';
 
 const drawResultField = documentQuerySelector('.css_draw_result_field');
 const drawResultBodyElement = elementQuerySelector(drawResultField, '.css_draw_result_body');
+const drawResultHeadElement = elementQuerySelector(drawResultField, '.css_draw_result_head');
+const drawResultLeftButtonElement = elementQuerySelector(drawResultHeadElement, '.css_draw_result_button_left');
 
 function generateTextElement(textSetElementObject: TextSetElementObject): GeneratedElement {
   const id = generateIdentifier();
@@ -48,4 +50,8 @@ export function closeDrawResult(): void {
   revokePageHistory('DrawResult');
   fadeOutElement(drawResultField);
   // openPreviousPage();
+}
+
+export function initializeDrawResultRipple(): void {
+  addRippleTo(drawResultLeftButtonElement);
 }
