@@ -1,3 +1,4 @@
+/* capsule */
 .css_set_field .css_set_body .css_draw_from_set_capsule {
   position: relative;
   width: 110px;
@@ -6,6 +7,7 @@
   border-radius: var(--d-cssvar-border-radius-large);
 }
 
+/* capsule > draw from set */
 .css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_from_set {
   position: absolute;
   top: 0px;
@@ -19,6 +21,7 @@
   color: var(--d-cssvar-000408);
 }
 
+/* capsule > options */
 .css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_options {
   position: absolute;
   top: 0px;
@@ -34,4 +37,14 @@
   height: 20px;
   width: 20px;
   color: var(--d-cssvar-000408);
+}
+
+/* capsule > separator */
+.css_set_field .css_set_body .css_draw_from_set_capsule .css_draw_from_set_capsule_separator {
+  position: absolute;
+  top: 3px;
+  left: calc(65px - 1px / 2);
+  width: 1px;
+  height: 39px;
+  background: var(--d-cssvar-ededf0);
 }
