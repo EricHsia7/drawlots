@@ -41,11 +41,11 @@ export function openDrawResult(setID: SetObject['id']): void {
   pushPageHistory('DrawResult');
   fadeInElement(drawResultField);
   initializeDrawResult(setID);
-  closePreviousPage();
+  // closePreviousPage();
 }
 
 export function closeDrawResult(): void {
-  // revokePageHistory('DrawResult');
+  revokePageHistory('DrawResult');
   fadeOutElement(drawResultField);
-  openPreviousPage();
+  // openPreviousPage();
 }
