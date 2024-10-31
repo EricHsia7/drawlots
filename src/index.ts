@@ -5,7 +5,7 @@ import { createElement } from './data/elements/index';
 import { loadCSS } from './interface/lazy-css';
 import { getImageColor } from './tools/image';
 import { predictTextColor } from './tools/colors';
-import { closeSetCreator, openSetCreator } from './interface/set-creator/index';
+import { closeSetCreator, createFormulatedSet, openSetCreator } from './interface/set-creator/index';
 import { closeSet, openSet } from './interface/set/index';
 
 import './interface/theme.css';
@@ -65,7 +65,8 @@ window.drawlots = {
     openSet,
     closeSet,
     openSetCreator,
-    closeSetCreator
+    closeSetCreator,
+    createFormulatedSet
   },
   test: {
     storeImage,
