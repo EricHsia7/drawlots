@@ -1,6 +1,6 @@
 import { SetObject } from '../../data/sets/index';
 import { addRippleTo } from '../../tools/index';
-import { documentQuerySelector } from '../../tools/query-selector';
+import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
 import { closePreviousPage, fadeInElement, fadeOutElement, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
 
 const setField = documentQuerySelector('.css_set_field');
