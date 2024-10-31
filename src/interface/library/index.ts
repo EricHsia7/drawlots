@@ -80,7 +80,7 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
         }
       });
     } else {
-      thisThumbnailElement.innerText = 'Empty Set';
+      thisThumbnailElement.innerText = 'Empty';
     }
   }
 
