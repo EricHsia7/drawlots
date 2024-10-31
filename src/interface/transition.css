@@ -5,8 +5,8 @@
 
 .css_transition_fade_in {
   animation-name: fade-in;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-direction: normal;
 }
@@ -28,8 +28,8 @@
 
 .css_transition_fade_out {
   animation-name: fade-out;
-  animation-duration: 300ms;
-  animation-timing-function: ease-in-out;
+  animation-duration: 250ms;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-direction: normal;
 }
