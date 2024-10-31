@@ -1,4 +1,4 @@
-import { SetObject } from '../../data/sets/index';
+import { getSet, SetObject } from '../../data/sets/index';
 import { addRippleTo } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
 import { closePreviousPage, fadeInElement, fadeOutElement, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
@@ -11,10 +11,12 @@ const drawOptionsElement = elementQuerySelector(drawFromSetCapsuleElement, '.css
 const setHeadElement = elementQuerySelector(setField, '.css_set_head');
 const setHeadLeftButtonElement = elementQuerySelector(setHeadElement, '.css_set_button_left');
 const setHeadRightButtonElement = elementQuerySelector(setHeadElement, '.css_set_button_right');
+const setHeadTitleElement = elementQuerySelector(setHeadElement, '.css_set_title');
 
 export function openSet(setID: SetObject['id']): void {
   pushPageHistory('Set');
   fadeInElement(setField);
+  initializeSet(setID);
   closePreviousPage();
 }
 
@@ -22,6 +24,11 @@ export function closeSet(): void {
   // revokePageHistory('Set');
   fadeOutElement(setField);
   openPreviousPage();
+}
+
+async function initializeSet(setID: SetObject['id']): void {
+  const set = await getSet(setID);
+  setHeadTitleElement.innerText = set.name;
 }
 
 export function initializeSetRipple(): void {
