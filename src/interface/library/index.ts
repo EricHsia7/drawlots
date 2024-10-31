@@ -10,11 +10,9 @@ let previousSets = [];
 const libraryField = documentQuerySelector('.css_library_field');
 const libraryBodyElement = elementQuerySelector(libraryField, '.css_library_body');
 const librarySetsElement = elementQuerySelector(libraryBodyElement, '.css_library_sets');
-/*
 const libraryHeadElement = elementQuerySelector(libraryField, '.css_library_head');
 const leftButtonElement = elementQuerySelector(libraryHeadElement, '.css_library_button_left');
 const rightButtonElement = elementQuerySelector(libraryHeadElement, '.css_library_button_right');
-*/
 
 function queryLibraryFieldSize(): FieldSize {
   return {
@@ -145,9 +143,7 @@ export async function initializeLibrary(): void {
   updateLibraryField(sets, false);
 }
 
-/*
 export function initializeLibraryRipple(): void {
   addRippleTo(leftButtonElement);
   addRippleTo(rightButtonElement);
 }
-*/

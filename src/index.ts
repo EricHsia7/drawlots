@@ -1,4 +1,4 @@
-import { initializeLibrary, resizeLibraryField } from './interface/library/index';
+import { initializeLibrary, initializeLibraryRipple, resizeLibraryField } from './interface/library/index';
 import { storeImage } from './data/images/index';
 import { addElementToSet, createSet } from './data/sets/index';
 import { createElement } from './data/elements/index';
@@ -57,9 +57,7 @@ window.drawlots = {
       initializeLibrary();
 
       // ripple
-      /*
       initializeLibraryRipple();
-      */
       initializeSetCreatorRipple();
       initializeSetRipple();
     }
