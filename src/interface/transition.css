@@ -29,7 +29,7 @@
 .css_transition_fade_out {
   animation-name: fade-out;
   animation-duration: 250ms;
-  animation-timing-function: ease;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   animation-direction: normal;
 }
