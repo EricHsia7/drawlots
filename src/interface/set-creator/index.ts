@@ -1,4 +1,5 @@
 import { createSet } from '../../data/sets/index';
+import { addRippleTo } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
 import { closePreviousPage, fadeInElement, fadeOutElement, openPreviousPage, pushPageHistory } from '../index';
 import { openSet } from '../set/index';
