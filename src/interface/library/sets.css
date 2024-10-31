@@ -26,11 +26,13 @@
   color: var(--d-cssvar-000408);
   user-select: none;
   -webkit-user-select: none;
-  font-size: 23px;
+  font-size: 15px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
 /* skeleton screen: true */
@@ -70,6 +72,9 @@
   color: var(--d-cssvar-000408);
   user-select: none;
   -webkit-user-select: none;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* skeleton screen: true */
