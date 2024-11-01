@@ -30,7 +30,7 @@ function generateTextElement(textSetElementObject: TextSetElementObject): Genera
   };
 }
 
-function generateImageElement(imageSetElementObject: ImageSetElementObject): GeneratedElement {
+async function generateImageElement(imageSetElementObject: ImageSetElementObject): Promise<GeneratedElement> {
   const imageHash = imageSetElementObject.image;
   const imageObject = await getImage(imageHash);
   const size = queryDrawResultFieldSize();
@@ -74,7 +74,7 @@ async function initializeDrawResult(setID: SetObject['id']): void {
       element = generateTextElement(result);
       break;
     case 'image':
-      element = generateImageElement(result);
+      element = await generateImageElement(result);
       break;
     case 'number':
       break;
