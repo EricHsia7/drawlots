@@ -11,7 +11,7 @@ export interface FieldSize {
   height: number;
 }
 
-type Page = 'Library' | 'Set' | 'SetCreator' | 'DrawResult';
+type Page = 'Library' | 'Set' | 'SetCreator' | 'SetEditor' | 'DrawResult';
 
 let pageHistory: Array<Page> = ['Library'];
 

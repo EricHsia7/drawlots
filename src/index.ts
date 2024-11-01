@@ -26,6 +26,10 @@ import './interface/set-creator/body.css';
 import './interface/set-creator/groups.css';
 import './interface/set-creator/set-name.css';
 
+import './interface/set-editor/field.css';
+import './interface/set-editor/head.css';
+import './interface/set-editor/body.css';
+
 import './interface/add-element/field.css';
 
 import './interface/add-text-element/field.css';
@@ -44,26 +48,29 @@ import './interface/draw-result/number.css';
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
 
-window.drawlots = {
-  initialize: function () {
-    if (!drawlots_initialized) {
-      window.addEventListener('resize', () => {});
-      if (screen) {
-        if (screen.orientation) {
-          screen.orientation.addEventListener('change', () => {});
-        }
+function initialize(): void {
+  if (!drawlots_initialized) {
+    window.addEventListener('resize', () => {});
+    if (screen) {
+      if (screen.orientation) {
+        screen.orientation.addEventListener('change', () => {});
       }
-      // initialize
-      initializeLibrary();
     }
-  },
-  secondlyInitialize: function () {
-    if (!drawlots_secondly_initialized) {
-      drawlots_secondly_initialized = true;
-      loadCSS('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap', 'noto_sans_tc');
-      loadCSS('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', 'material_symbols');
-    }
-  },
+    initializeLibrary();
+  }
+}
+
+function secondlyInitialize(): void {
+  if (!drawlots_secondly_initialized) {
+    drawlots_secondly_initialized = true;
+    loadCSS('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap', 'noto_sans_tc');
+    loadCSS('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200', 'material_symbols');
+  }
+}
+
+window.drawlots = {
+  initialize,
+  secondlyInitialize,
   sets: {
     openSet,
     closeSet,
