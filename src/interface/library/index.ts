@@ -1,8 +1,8 @@
 import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
 import { listSets, SetObject } from '../../data/sets/index';
 import { getElement } from '../../data/elements/index';
-import { addRippleTo, generateIdentifier } from '../../tools/index';
-import { fadeInElement, fadeOutElement, FieldSize, GeneratedElement } from '../index';
+import { generateIdentifier } from '../../tools/index';
+import { fadeInElement, fadeOutElement, GeneratedElement } from '../index';
 import { getImage } from '../../data/images/index';
 
 let previousSets = [];
@@ -83,7 +83,6 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
     for (let i = 0; i < Math.abs(capacity); i++) {
       const thisSetElement = generateSetElement();
       librarySetsElement.appendChild(thisSetElement.element);
-      addRippleTo(elementQuerySelector(librarySetsElement, `.css_library_set#${thisSetElement.id}`));
     }
   } else {
     for (let i = 0; i < Math.abs(capacity); i++) {
@@ -129,9 +128,4 @@ export async function initializeLibrary(): void {
   setUpLibraryFieldSkeletonScreen();
   const sets = await listSets();
   updateLibraryField(sets, false);
-}
-
-export function initializeLibraryRipple(): void {
-  addRippleTo(leftButtonElement);
-  addRippleTo(rightButtonElement);
 }

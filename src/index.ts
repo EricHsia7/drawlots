@@ -1,8 +1,8 @@
-import { initializeLibrary, initializeLibraryRipple } from './interface/library/index';
+import { initializeLibrary } from './interface/library/index';
 import { loadCSS } from './interface/lazy-css';
-import { closeSetCreator, createFormulatedSet, initializeSetCreatorRipple, openSetCreator } from './interface/set-creator/index';
-import { closeSet, initializeSetRipple, openSet } from './interface/set/index';
-import { closeDrawResult, initializeDrawResultRipple, openDrawResult } from './interface/draw-result/index';
+import { closeSetCreator, createFormulatedSet, openSetCreator } from './interface/set-creator/index';
+import { closeSet, openSet } from './interface/set/index';
+import { closeDrawResult, openDrawResult } from './interface/draw-result/index';
 import { createElement } from './data/elements/index';
 import { addElementToSet, createSet } from './data/sets/index';
 
@@ -56,12 +56,6 @@ window.drawlots = {
       }
       // initialize
       initializeLibrary();
-
-      // ripple
-      initializeLibraryRipple();
-      initializeSetCreatorRipple();
-      initializeSetRipple();
-      initializeDrawResultRipple();
     }
   },
   secondlyInitialize: function () {

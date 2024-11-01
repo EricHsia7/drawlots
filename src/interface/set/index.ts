@@ -1,5 +1,4 @@
 import { getSet, SetObject } from '../../data/sets/index';
-import { addRippleTo } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
 import { closePreviousPage, fadeInElement, fadeOutElement, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
 
@@ -30,11 +29,4 @@ async function initializeSet(setID: SetObject['id']): void {
   const set = await getSet(setID);
   setHeadTitleElement.innerText = set.name;
   drawFromSetElement.setAttribute('onclick', `drawlots.drawResult.openDrawResult('${setID}')`);
-}
-
-export function initializeSetRipple(): void {
-  addRippleTo(setHeadLeftButtonElement);
-  addRippleTo(setHeadRightButtonElement);
-  addRippleTo(drawFromSetElement);
-  addRippleTo(drawOptionsElement);
 }

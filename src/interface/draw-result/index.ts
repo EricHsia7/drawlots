@@ -33,13 +33,14 @@ function generateTextElement(textSetElementObject: TextSetElementObject): Genera
 function generateImageElement(imageSetElementObject: ImageSetElementObject): GeneratedElement {
   const imageHash = imageSetElementObject.image;
   const imageObject = await getImage(imageHash);
-  let width = 0;
-  let height = 0;
   const size = queryDrawResultFieldSize();
-  const boxWidth = size.width;
-  const boxHeight = size.height - 55;
+  const padding = 15;
+  const boxWidth = size.width - padding * 2;
+  const boxHeight = size.height - 55 - padding * 2;
   const imageWidth = imageObject.width;
   const imageHeight = imageObject.height;
+  let width = 0;
+  let height = 0;
   if (boxHeight >= boxWidth) {
     if (imageWidth >= imageHeight) {
       width = boxWidth;
