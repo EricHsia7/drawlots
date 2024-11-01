@@ -57,5 +57,5 @@ export function closeDrawResult(): void {
 }
 
 export function initializeDrawResultRipple(): void {
-  addRippleTo(drawResultLeftButtonElement);
+  addRippleTo(drawResultLeftButtonElement, 'var(--d-draw-result-text)');
 }
