@@ -5,6 +5,7 @@ import { closeSet, openSet } from './interface/set/index';
 import { closeDrawResult, openDrawResult } from './interface/draw-result/index';
 import { createElement } from './data/elements/index';
 import { addElementToSet, createSet } from './data/sets/index';
+import { closeSetEditor, openSetEditor } from './interface/set-editor/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -76,7 +77,9 @@ window.drawlots = {
     closeSet,
     openSetCreator,
     closeSetCreator,
-    createFormulatedSet
+    createFormulatedSet,
+    openSetEditor,
+    closeSetEditor
   },
   drawResult: {
     openDrawResult,

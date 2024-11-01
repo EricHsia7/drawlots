@@ -101,7 +101,18 @@
     </div>
 
     <div class="css_set_editor_field" displayed="false">
-      <div class="css_set_editor_body"></div>
+      <div class="css_set_editor_body">
+        <div class="css_set_editor_elements"></div>
+      </div>
+      <div class="css_set_editor_head">
+        <div class="css_set_editor_button_left" onclick="drawlots.sets.closeSetEditor()">
+          <span class="css_material_symbols_rounded">arrow_back</span>
+        </div>
+        <div class="css_set_editor_title">Edit Set</div>
+        <div class="css_set_editor_button_right" onclick="drawlots.sets.openElementCreator()">
+          <span class="css_material_symbols_rounded">add_2</span>
+        </div>
+      </div>
     </div>
 
     <div class="css_add_element_field" displayed="false">
