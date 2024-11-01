@@ -4,7 +4,7 @@ import { drawFromSet, SetObject } from '../../data/sets/index';
 import { getColorPack } from '../../tools/colors';
 import { addRippleTo, generateIdentifier } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
-import { fadeInElement, fadeOutElement, FieldSize, GeneratedElement, pushPageHistory, revokePageHistory } from '../index';
+import { displayElement, fadeOutElement, FieldSize, GeneratedElement, pushPageHistory, revokePageHistory } from '../index';
 
 const drawResultField = documentQuerySelector('.css_draw_result_field');
 const drawResultBodyElement = elementQuerySelector(drawResultField, '.css_draw_result_body');
@@ -89,7 +89,7 @@ async function initializeDrawResult(setID: SetObject['id']): void {
 
 export function openDrawResult(setID: SetObject['id']): void {
   pushPageHistory('DrawResult');
-  fadeInElement(drawResultField);
+  displayElement(drawResultField);
   initializeDrawResult(setID);
   // closePreviousPage();
 }

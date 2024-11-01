@@ -2,7 +2,7 @@ import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } 
 import { listSets, SetObject } from '../../data/sets/index';
 import { getElement } from '../../data/elements/index';
 import { generateIdentifier } from '../../tools/index';
-import { fadeInElement, fadeOutElement, GeneratedElement } from '../index';
+import { displayElement, fadeOutElement, GeneratedElement } from '../index';
 import { getImage } from '../../data/images/index';
 
 let previousSets = [];
@@ -15,7 +15,7 @@ const leftButtonElement = elementQuerySelector(libraryHeadElement, '.css_library
 const rightButtonElement = elementQuerySelector(libraryHeadElement, '.css_library_button_right');
 
 export function openLibrary(): void {
-  fadeInElement(libraryField);
+  displayElement(libraryField);
   initializeLibrary();
 }
 

@@ -1,6 +1,5 @@
 import { closeLibrary, openLibrary } from './library/index';
 import { closeSetCreator, openSetCreator } from './set-creator/index';
-import { closeSet, openSet } from './set/index';
 
 export interface GeneratedElement {
   element: HTMLElement;
@@ -72,34 +71,10 @@ export function openPreviousPage(): void {
   }
 }
 
-export function fadeInElement(element: HTMLElement): void {
-  const displayed = element.getAttribute('displayed');
-  const inPreparation = element.classList.contains('css_transition_fade_in_preparation');
-  if (displayed === 'false' && !inPreparation) {
-    element.addEventListener('animationend', function () {
-      element.setAttribute('displayed', 'true');
-      element.classList.remove('css_transition_fade_in_preparation');
-      element.classList.remove('css_transition_fade_in');
-    });
-    element.classList.add('css_transition_fade_in_preparation');
-    setTimeout(() => {
-      element.classList.add('css_transition_fade_in');
-    }, 1);
-  }
+export function displayElement(element: HTMLElement): void {
+  element.setAttribute('displayed', 'true');
 }
 
 export function fadeOutElement(element: HTMLElement): void {
-  const displayed = element.getAttribute('displayed');
-  const inPreparation = element.classList.contains('css_transition_fade_out_preparation');
-  if (displayed === 'true' && !inPreparation) {
-    element.addEventListener('animationend', function () {
-      element.setAttribute('displayed', 'false');
-      element.classList.remove('css_transition_fade_out_preparation');
-      element.classList.remove('css_transition_fade_out');
-    });
-    element.classList.add('css_transition_fade_out_preparation');
-    setTimeout(() => {
-      element.classList.add('css_transition_fade_out');
-    }, 1);
-  }
+  element.setAttribute('displayed', 'false');
 }
