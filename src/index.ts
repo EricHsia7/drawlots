@@ -1,8 +1,10 @@
-import { initializeLibrary, initializeLibraryRipple, resizeLibraryField } from './interface/library/index';
+import { initializeLibrary, initializeLibraryRipple } from './interface/library/index';
 import { loadCSS } from './interface/lazy-css';
 import { closeSetCreator, createFormulatedSet, initializeSetCreatorRipple, openSetCreator } from './interface/set-creator/index';
 import { closeSet, initializeSetRipple, openSet } from './interface/set/index';
 import { closeDrawResult, initializeDrawResultRipple, openDrawResult } from './interface/draw-result/index';
+import { createElement } from './data/elements/index';
+import { addElementToSet, createSet } from './data/sets/index';
 
 import './interface/theme.css';
 import './interface/index.css';
@@ -39,8 +41,6 @@ import './interface/draw-result/body.css';
 import './interface/draw-result/text.css';
 import './interface/draw-result/image.css';
 import './interface/draw-result/number.css';
-import { createElement } from './data/elements/index';
-import { addElementToSet, createSet } from './data/sets/index';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
@@ -48,15 +48,10 @@ let drawlots_secondly_initialized = false;
 window.drawlots = {
   initialize: function () {
     if (!drawlots_initialized) {
-      resizeLibraryField();
-      window.addEventListener('resize', () => {
-        resizeLibraryField();
-      });
+      window.addEventListener('resize', () => {});
       if (screen) {
         if (screen.orientation) {
-          screen.orientation.addEventListener('change', () => {
-            resizeLibraryField();
-          });
+          screen.orientation.addEventListener('change', () => {});
         }
       }
       // initialize

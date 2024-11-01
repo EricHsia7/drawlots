@@ -3,3 +3,10 @@
   -webkit-user-select: none;
   user-select: none;
 }
+
+.css_draw_result_field .css_draw_result_body .css_draw_result_image img {
+  border-radius: var(--d-cssvar-border-radius-large);
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

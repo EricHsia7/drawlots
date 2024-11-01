@@ -23,27 +23,6 @@ export function closeLibrary(): void {
   fadeOutElement(libraryField);
 }
 
-function queryLibraryFieldSize(): FieldSize {
-  return {
-    width: window.innerWidth,
-    height: window.innerHeight
-  };
-}
-
-export function resizeLibraryField(): void {
-  const size = queryLibraryFieldSize();
-  const padding = 7.5;
-  let setWidth = 0;
-  let setHeight = 250;
-  if (size.width < 500) {
-    setWidth = size.width - padding * 2;
-  } else {
-    setWidth = Math.floor((size.width - padding * 2) / Math.floor((size.width - padding * 2) / 300));
-  }
-  libraryField.style.setProperty('--d-cssvar-set-width', `${setWidth}px`);
-  libraryField.style.setProperty('--d-cssvar-set-height', `${setHeight}px`);
-}
-
 function generateSetElement(): GeneratedElement {
   const id = generateIdentifier('s');
   const element = document.createElement('div');
