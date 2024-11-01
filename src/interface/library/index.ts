@@ -2,7 +2,7 @@ import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } 
 import { listSets, SetObject } from '../../data/sets/index';
 import { getElement } from '../../data/elements/index';
 import { generateIdentifier } from '../../tools/index';
-import { displayElement, fadeOutElement, GeneratedElement } from '../index';
+import { displayElement, hideElement, GeneratedElement } from '../index';
 import { getImage } from '../../data/images/index';
 
 let previousSets = [];
@@ -16,11 +16,11 @@ const rightButtonElement = elementQuerySelector(libraryHeadElement, '.css_librar
 
 export function openLibrary(): void {
   displayElement(libraryField);
-  initializeLibrary();
+  refreshLibrary();
 }
 
 export function closeLibrary(): void {
-  fadeOutElement(libraryField);
+  hideElement(libraryField);
 }
 
 function generateSetElement(): GeneratedElement {
@@ -126,6 +126,11 @@ function setUpLibraryFieldSkeletonScreen() {
 
 export async function initializeLibrary(): void {
   setUpLibraryFieldSkeletonScreen();
+  const sets = await listSets();
+  updateLibraryField(sets, false);
+}
+
+export async function refreshLibrary(): void {
   const sets = await listSets();
   updateLibraryField(sets, false);
 }

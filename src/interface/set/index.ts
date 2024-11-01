@@ -1,6 +1,6 @@
 import { getSet, SetObject } from '../../data/sets/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
-import { closePreviousPage, displayElement, fadeOutElement, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
+import { closePreviousPage, displayElement, hideElement, openPreviousPage, pushPageHistory, revokePageHistory } from '../index';
 
 const setField = documentQuerySelector('.css_set_field');
 const setBody = elementQuerySelector(setField, '.css_set_body');
@@ -21,7 +21,7 @@ export function openSet(setID: SetObject['id']): void {
 
 export function closeSet(): void {
   // revokePageHistory('Set');
-  fadeOutElement(setField);
+  hideElement(setField);
   openPreviousPage();
 }
 

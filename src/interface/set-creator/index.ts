@@ -1,6 +1,6 @@
 import { createSet } from '../../data/sets/index';
 import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
-import { closePreviousPage, displayElement, fadeOutElement, openPreviousPage, pushPageHistory } from '../index';
+import { closePreviousPage, displayElement, hideElement, openPreviousPage, pushPageHistory } from '../index';
 import { openSet } from '../set/index';
 
 const setCreatorField = documentQuerySelector('.css_set_creator_field');
@@ -25,7 +25,7 @@ export function openSetCreator(): void {
 
 export function closeSetCreator(): void {
   // revokePageHistory('SetCreator');
-  fadeOutElement(setCreatorField);
+  hideElement(setCreatorField);
   openPreviousPage();
 }
 

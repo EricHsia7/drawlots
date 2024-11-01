@@ -75,6 +75,6 @@ export function displayElement(element: HTMLElement): void {
   element.setAttribute('displayed', 'true');
 }
 
-export function fadeOutElement(element: HTMLElement): void {
+export function hideElement(element: HTMLElement): void {
   element.setAttribute('displayed', 'false');
 }
