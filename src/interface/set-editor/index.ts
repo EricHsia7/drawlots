@@ -6,6 +6,8 @@ import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } 
 import { getIconHTML } from '../icons/index';
 import { displayElement, GeneratedElement, hideElement, pushPageHistory, revokePageHistory } from '../index';
 
+let previousElementObjects = [];
+
 const setEditorField = documentQuerySelector('.css_set_editor_field');
 const setEditorBodyElement = elementQuerySelector(setEditorField, '.css_set_editor_body');
 const setEditorElementObjectsElement = elementQuerySelector(setEditorBodyElement, '.css_set_editor_element_objects');
@@ -80,10 +82,10 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
     element.setAttribute('skeleton-screen', skeletonScreen);
   }
 
-  const elementsQuantity = elementObjects.length;
+  const elementObjectsQuantity = elementObjects.length;
 
   const currentElementSeatQuantity = elementQuerySelectorAll(setEditorElementObjectsElement, '.css_set_editor_element_object').length;
-  const capacity = currentElementSeatQuantity - elementsQuantity;
+  const capacity = currentElementSeatQuantity - elementObjectsQuantity;
   if (capacity < 0) {
     for (let i = 0; i < Math.abs(capacity); i++) {
       const thisElementObjectElement = generateElementObjectElement();
@@ -96,16 +98,16 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
     }
   }
 
-  for (let i = 0; i < elementsQuantity; i++) {
+  for (let i = 0; i < elementObjectsQuantity; i++) {
     const thisElementObject = elementObjects[i];
     const thisElementObjectElement = elementQuerySelectorAll(librarySetsElement, '.css_set_editor_element_object')[i];
-    if (previousSets.length < elementsQuantity) {
+    if (previousElementObjects.length < elementObjectsQuantity) {
       updateThumbnail(thisElementObjectElement, thisElementObject);
       updateContext(thisElementObjectElement, thisElementObject);
       updateOptions(thisElementObjectElement, thisElementObject);
       updateSkeletonScreen(thisElementObjectElement, skeletonScreen);
     } else {
-      if (!(previousSets[i] === thisElementObject)) {
+      if (!(previousElementObjects[i] === thisElementObject)) {
         updateThumbnail(thisElementObjectElement, thisElementObject);
         updateContext(thisElementObjectElement, thisElementObject);
         updateOptions(thisElementObjectElement, thisElementObject);
@@ -113,6 +115,7 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
       }
     }
   }
+  previousElementObjects = elementObjects;
 }
 
 function setUpSetEditorFieldSkeletonScreen(): void {
@@ -141,5 +144,5 @@ async function initializeSetEditor(setID: SetObject['id']): void {
     const elementObject = await getElement(elementID);
     elementObjects.push(elementObject);
   }
-  updateSetEditorField(elementObjects);
+  updateSetEditorField(elementObjects, false);
 }

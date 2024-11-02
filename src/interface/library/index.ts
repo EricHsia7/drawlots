@@ -108,6 +108,7 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
       }
     }
   }
+  previousSets = sets;
 }
 
 function setUpLibraryFieldSkeletonScreen(): void {
