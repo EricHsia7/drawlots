@@ -110,7 +110,7 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
   }
 }
 
-function setUpLibraryFieldSkeletonScreen() {
+function setUpLibraryFieldSkeletonScreen(): void {
   const defaultSetsQuantity = 10;
   let sets: Array<SetObject> = [];
   for (let i = 0; i < defaultSetsQuantity; i++) {
