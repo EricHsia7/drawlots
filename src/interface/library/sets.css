@@ -1,7 +1,12 @@
 /* sets */
 .css_library_field .css_library_body .css_library_sets {
   position: relative;
-  width: 100%;
+  left: 10px;
+  width: calc(100% - 20px);
+  border-radius: var(--d-cssvar-border-radius-large);
+  margin-top: 5px;
+  margin-bottom: calc(5px + var(--d-cssvar-safe-area-bottom));
+  overflow: hidden;
 }
 
 /* sets > set */
@@ -9,12 +14,7 @@
   position: relative;
   width: 100%;
   height: 80px;
-  margin-top: 5px;
   background: var(--d-cssvar-ffffff);
-}
-
-.css_library_field .css_library_body .css_library_sets .css_library_set:last-child {
-  margin-bottom: calc(5px + var(--d-cssvar-safe-area-bottom));
 }
 
 /* sets > set > thumbnail */

@@ -1,7 +1,12 @@
 /* element objects */
 .css_set_editor_field .css_set_editor_body .css_set_editor_element_objects {
   position: relative;
-  width: 100%;
+  left: 10px;
+  width: calc(100% - 20px);
+  border-radius: var(--d-cssvar-border-radius-large);
+  margin-top: 5px;
+  margin-bottom: calc(5px + var(--d-cssvar-safe-area-bottom));
+  overflow: hidden;
 }
 
 /* element objects > element object */
@@ -9,12 +14,7 @@
   position: relative;
   width: 100%;
   height: 65px;
-  margin-top: 5px;
   background: var(--d-cssvar-ffffff);
-}
-
-.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object:last-child {
-  margin-bottom: calc(5px + var(--d-cssvar-safe-area-bottom));
 }
 
 /* element objects > element object > thumbnail */
