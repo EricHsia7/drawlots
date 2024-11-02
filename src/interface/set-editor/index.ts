@@ -3,7 +3,6 @@ import { getImage } from '../../data/images/index';
 import { getSet, SetObject } from '../../data/sets/index';
 import { generateIdentifier } from '../../tools/index';
 import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
-import { getIconHTML } from '../icons/index';
 import { displayElement, GeneratedElement, hideElement, pushPageHistory, revokePageHistory } from '../index';
 
 let previousElementObjects = [];
@@ -30,7 +29,7 @@ function generateElementObjectElement(): GeneratedElement {
   const element = document.createElement('div');
   element.classList.add('css_set_editor_element_object');
   element.id = id;
-  element.innerHTML = `<div class="css_set_editor_element_object_thumbnail"></div><div class="css_set_editor_element_object_context"></div><div class="css_set_editor_element_object_options"><span class="css_material_symbols_rounded">more_vert</span></div>`;
+  element.innerHTML = `<div class="css_set_editor_element_object_thumbnail"></div><div class="css_set_editor_element_object_context"></div><div class="css_set_editor_element_object_edit"><span class="css_material_symbols_rounded">edit</span></div>`;
   return {
     element: element,
     id: id
@@ -74,8 +73,8 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
     }
   }
 
-  function updateOptions(element: HTMLElement, elementObject: SetElementObject): void {
-    elementQuerySelector(element, '.css_set_editor_element_object_options').setAttribute('onclick', `drawlots.sets.openSetEditorElementOptions('${elementObject.id}')`);
+  function updateEdit(element: HTMLElement, elementObject: SetElementObject): void {
+    elementQuerySelector(element, '.css_set_editor_element_object_edit').setAttribute('onclick', `drawlots.sets.openSetEditorElementOptions('${elementObject.id}')`);
   }
 
   function updateSkeletonScreen(element: HTMLElement, skeletonScreen: boolean): void {
@@ -104,13 +103,13 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
     if (previousElementObjects.length < elementObjectsQuantity) {
       updateThumbnail(thisElementObjectElement, thisElementObject);
       updateContext(thisElementObjectElement, thisElementObject);
-      updateOptions(thisElementObjectElement, thisElementObject);
+      updateEdit(thisElementObjectElement, thisElementObject);
       updateSkeletonScreen(thisElementObjectElement, skeletonScreen);
     } else {
       if (!(previousElementObjects[i] === thisElementObject)) {
         updateThumbnail(thisElementObjectElement, thisElementObject);
         updateContext(thisElementObjectElement, thisElementObject);
-        updateOptions(thisElementObjectElement, thisElementObject);
+        updateEdit(thisElementObjectElement, thisElementObject);
         updateSkeletonScreen(thisElementObjectElement, skeletonScreen);
       }
     }

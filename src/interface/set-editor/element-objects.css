@@ -55,7 +55,7 @@
   top: 10px;
   left: 65px;
   height: calc(65px - 10px * 2);
-  width: calc(100% - 65px - 45px);
+  width: calc(100% - 65px - 65px);
   display: flex;
   align-items: center;
   font-size: 20px;
@@ -63,21 +63,23 @@
   overflow: hidden;
   word-break: keep-all;
   white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-/* element objects > element object > options */
-.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_options {
+/* element objects > element object > edit */
+.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_edit {
   position: absolute;
   top: 0px;
   right: 0px;
   height: 65px;
-  width: 45px;
+  width: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_options span.css_material_symbols_rounded {
+.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_edit span.css_material_symbols_rounded {
   width: 20px;
   height: 20px;
   color: var(--d-cssvar-000408);
