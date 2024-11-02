@@ -109,26 +109,10 @@
           <span class="css_material_symbols_rounded">arrow_back</span>
         </div>
         <div class="css_set_editor_title">Edit Set</div>
-        <div class="css_set_editor_button_right" onclick="drawlots.sets.openElementCreator()">
+        <div class="css_set_editor_button_right" onclick="drawlots.elements.openElementCreator('')">
           <span class="css_material_symbols_rounded">add_2</span>
         </div>
       </div>
-    </div>
-
-    <div class="css_add_element_field" displayed="false">
-      <div class="css_add_element_body"></div>
-    </div>
-
-    <div class="css_add_number_element_field" displayed="false">
-      <div class="css_add_number_element_body"></div>
-    </div>
-
-    <div class="css_add_text_element_field" displayed="false">
-      <div class="css_add_text_element_body"></div>
-    </div>
-
-    <div class="css_add_image_element_field" displayed="false">
-      <div class="css_add_image_element_body"></div>
     </div>
 
     <!-- draw result -->
@@ -144,6 +128,20 @@
           <span class="css_material_symbols_rounded">check</span>
         </div>
         -->
+      </div>
+    </div>
+
+    <!-- elements -->
+    <div class="css_element_creator_field" displayed="false">
+      <div class="css_element_creator_body"></div>
+      <div class="css_element_creator_head">
+        <div class="css_element_creator_button_left" onclick="drawlots.elements.closeElementCreator()">
+          <span class="css_material_symbols_rounded">arrow_back</span>
+        </div>
+        <div class="css_element_creator_title">Create Element</div>
+        <div class="css_element_creator_button_right" onclick="">
+          <span class="css_material_symbols_rounded">check</span>
+        </div>
       </div>
     </div>
 

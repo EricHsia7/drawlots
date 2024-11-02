@@ -10,6 +10,8 @@ let previousElementObjects = [];
 const setEditorField = documentQuerySelector('.css_set_editor_field');
 const setEditorBodyElement = elementQuerySelector(setEditorField, '.css_set_editor_body');
 const setEditorElementObjectsElement = elementQuerySelector(setEditorBodyElement, '.css_set_editor_element_objects');
+const setEditorHeadElement = elementQuerySelector(setEditorField, '.css_set_editor_head');
+const setEditorHeadRightButtonElement = elementQuerySelector(setEditorHeadElement, '.css_set_editor_button_right');
 
 export function openSetEditor(setID: SetObject['id']): void {
   pushPageHistory('SetEditor');
@@ -136,6 +138,7 @@ function setUpSetEditorFieldSkeletonScreen(): void {
 }
 
 async function initializeSetEditor(setID: SetObject['id']): void {
+  setEditorHeadRightButtonElement.setAttribute('onclick', `drawlots.elements.openElementCreator('${setID}')`);
   setUpSetEditorFieldSkeletonScreen();
   const set = await getSet(setID);
   let elementObjects = [];

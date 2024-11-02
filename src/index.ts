@@ -32,20 +32,13 @@ import './interface/set-editor/head.css';
 import './interface/set-editor/body.css';
 import './interface/set-editor/element-objects.css';
 
-import './interface/add-element/field.css';
-
-import './interface/add-text-element/field.css';
-
-import './interface/add-number-element/field.css';
-
-import './interface/add-image-element/field.css';
-
 import './interface/draw-result/field.css';
 import './interface/draw-result/head.css';
 import './interface/draw-result/body.css';
 import './interface/draw-result/text.css';
 import './interface/draw-result/image.css';
 import './interface/draw-result/number.css';
+import { closeElementCreator, openElementCreator } from './interface/element-creator/index';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
@@ -81,6 +74,10 @@ window.drawlots = {
     createFormulatedSet,
     openSetEditor,
     closeSetEditor
+  },
+  elements: {
+    openElementCreator,
+    closeElementCreator
   },
   drawResult: {
     openDrawResult,

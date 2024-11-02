@@ -11,7 +11,7 @@ export interface FieldSize {
   height: number;
 }
 
-type Page = 'Library' | 'DrawResult' | 'Set' | 'SetCreator' | 'SetEditor';
+type Page = 'Library' | 'DrawResult' | 'Set' | 'SetCreator' | 'SetEditor' | 'ElementCreator';
 
 let pageHistory: Array<Page> = ['Library'];
 
@@ -49,6 +49,8 @@ export function closePreviousPage(): void {
         break;
       case 'SetEditor':
         break;
+      case 'ElementCreator':
+        break;
       default:
         break;
     }
@@ -72,6 +74,8 @@ export function openPreviousPage(): void {
         openSetCreator();
         break;
       case 'SetEditor':
+        break;
+      case 'ElementCreator':
         break;
       default:
         break;
