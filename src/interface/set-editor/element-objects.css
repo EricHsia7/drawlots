@@ -48,3 +48,37 @@
   -webkit-user-select: none;
   -webkit-user-drag: none;
 }
+
+/* element objects > element object > context */
+.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_context {
+  position: absolute;
+  top: 10px;
+  left: 65px;
+  height: calc(65px - 10px * 2);
+  width: calc(100% - 65px - 45px);
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  color: var(--d-cssvar-000408);
+  overflow: hidden;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+/* element objects > element object > options */
+.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_options {
+  position: absolute;
+  top: 10px;
+  left: 65px;
+  height: 65px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_options span.css_material_symbols_rounded {
+  width: 20px;
+  height: 20px;
+  color: var(--d-cssvar-000408);
+}
