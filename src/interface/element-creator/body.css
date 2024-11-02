@@ -1,0 +1,15 @@
+.css_element_creator_field .css_element_creator_body {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  width: 100%;
+  height: calc(100% - 55px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.css_element_creator_field .css_element_creator_body::-webkit-scrollbar {
+  display: none;
+}
