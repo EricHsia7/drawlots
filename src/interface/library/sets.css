@@ -4,8 +4,8 @@
   left: 10px;
   width: calc(100% - 20px);
   border-radius: var(--d-cssvar-border-radius-large);
-  margin-top: 5px;
-  margin-bottom: calc(5px + var(--d-cssvar-safe-area-bottom));
+  margin-top: 10px;
+  margin-bottom: calc(10px + var(--d-cssvar-safe-area-bottom));
   overflow: hidden;
 }
 
