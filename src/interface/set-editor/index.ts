@@ -100,7 +100,7 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
 
   for (let i = 0; i < elementObjectsQuantity; i++) {
     const thisElementObject = elementObjects[i];
-    const thisElementObjectElement = elementQuerySelectorAll(librarySetsElement, '.css_set_editor_element_object')[i];
+    const thisElementObjectElement = elementQuerySelectorAll(setEditorElementObjectsElement, '.css_set_editor_element_object')[i];
     if (previousElementObjects.length < elementObjectsQuantity) {
       updateThumbnail(thisElementObjectElement, thisElementObject);
       updateContext(thisElementObjectElement, thisElementObject);
