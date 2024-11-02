@@ -42,10 +42,10 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
     const thisThumbnailElement = elementQuerySelector(element, '.css_set_editor_element_object_thumbnail');
     switch (elementObject.type) {
       case 'text':
-        thisThumbnailElement.innerHTML = getIconHTML('notes');
+        thisThumbnailElement.innerHTML = '<span class="css_material_symbols_rounded">notes</span>';
         break;
       case 'number':
-        thisThumbnailElement.innerHTML = getIconHTML('numbers');
+        thisThumbnailElement.innerHTML = '<span class="css_material_symbols_rounded">numbers</span>';
         break;
       case 'image':
         getImage(elementObject.image).then((result) => {
@@ -75,7 +75,7 @@ function updateSetEditorField(elementObjects: Array<SetElementObject>, skeletonS
   }
 
   function updateOptions(element: HTMLElement, elementObject: SetElementObject): void {
-    element.setAttribute('onclick', `drawlots.sets.openSetEditorElementOptions('${elementObject.id}')`);
+    elementQuerySelector(element, '.css_set_editor_element_object_options').setAttribute('onclick', `drawlots.sets.openSetEditorElementOptions('${elementObject.id}')`);
   }
 
   function updateSkeletonScreen(element: HTMLElement, skeletonScreen: boolean): void {

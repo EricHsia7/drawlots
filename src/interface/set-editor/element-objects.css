@@ -68,8 +68,8 @@
 /* element objects > element object > options */
 .css_set_editor_field .css_set_editor_body .css_set_editor_element_objects .css_set_editor_element_object .css_set_editor_element_object_options {
   position: absolute;
-  top: 10px;
-  left: 65px;
+  top: 0px;
+  right: 0px;
   height: 65px;
   width: 45px;
   display: flex;
