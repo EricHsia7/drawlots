@@ -17,13 +17,6 @@ import './interface/library/body.css';
 import './interface/library/head.css';
 import './interface/library/sets.css';
 
-import './interface/draw-result/field.css';
-import './interface/draw-result/head.css';
-import './interface/draw-result/body.css';
-import './interface/draw-result/text.css';
-import './interface/draw-result/image.css';
-import './interface/draw-result/number.css';
-
 import './interface/set/field.css';
 import './interface/set/head.css';
 import './interface/set/body.css';
@@ -43,6 +36,13 @@ import './interface/set-editor/element-objects.css';
 import './interface/element-creator/field.css';
 import './interface/element-creator/head.css';
 import './interface/element-creator/body.css';
+
+import './interface/draw-result/field.css';
+import './interface/draw-result/head.css';
+import './interface/draw-result/body.css';
+import './interface/draw-result/text.css';
+import './interface/draw-result/image.css';
+import './interface/draw-result/number.css';
 
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
