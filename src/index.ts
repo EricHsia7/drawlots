@@ -44,11 +44,6 @@ import './interface/element-creator/field.css';
 import './interface/element-creator/head.css';
 import './interface/element-creator/body.css';
 
-import './interface/set-editor/field.css';
-import './interface/set-editor/head.css';
-import './interface/set-editor/body.css';
-import './interface/set-editor/element-objects.css';
-
 let drawlots_initialized = false;
 let drawlots_secondly_initialized = false;
 
