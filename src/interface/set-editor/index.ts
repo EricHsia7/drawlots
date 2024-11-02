@@ -2,7 +2,7 @@ import { getElement, SetElementObject } from '../../data/elements/index';
 import { getImage } from '../../data/images/index';
 import { getSet, SetObject } from '../../data/sets/index';
 import { generateIdentifier } from '../../tools/index';
-import { documentQuerySelector, elementQuerySelector } from '../../tools/query-selector';
+import { documentQuerySelector, elementQuerySelector, elementQuerySelectorAll } from '../../tools/query-selector';
 import { getIconHTML } from '../icons/index';
 import { displayElement, GeneratedElement, hideElement, pushPageHistory, revokePageHistory } from '../index';
 
