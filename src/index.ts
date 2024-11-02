@@ -30,6 +30,7 @@ import './interface/set-creator/set-name.css';
 import './interface/set-editor/field.css';
 import './interface/set-editor/head.css';
 import './interface/set-editor/body.css';
+import './interface/set-editor/element-objects.css';
 
 import './interface/add-element/field.css';
 
