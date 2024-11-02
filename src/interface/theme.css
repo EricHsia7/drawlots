@@ -1,6 +1,9 @@
 :root {
   --d-cssvar-maincolor: #20385e;
-/* #2f4f82 */
+  --d-cssvar-maincolor-r: 32;
+  --d-cssvar-maincolor-g: 56;
+  --d-cssvar-maincolor-b: 94;
+
   --d-cssvar-fafafd: #fafafd;
   --d-cssvar-fafafd-r: 250;
   --d-cssvar-fafafd-g: 250;
