@@ -1,4 +1,4 @@
-import { Color } from '../../tools/colors';
+import { ColorInRGB } from '../../tools/colors';
 import { generateIdentifier } from '../../tools/index';
 import { ImageHash } from '../images/index';
 import { lfGetItem, lfSetItem } from '../storage/index';
@@ -7,21 +7,21 @@ export interface NumberSetElementObject {
   id: string;
   type: 'number';
   number: number;
-  color: Color;
+  color: ColorInRGB;
 }
 
 export interface TextSetElementObject {
   id: string;
   type: 'text';
   text: string;
-  color: Color;
+  color: ColorInRGB;
 }
 
 export interface ImageSetElementObject {
   id: string;
   type: 'image';
   image: ImageHash;
-  color: Color;
+  color: ColorInRGB;
 }
 
 export type SetElementObject = NumberSetElementObject | TextSetElementObject | ImageSetElementObject;

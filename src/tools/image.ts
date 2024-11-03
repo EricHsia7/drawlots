@@ -1,4 +1,4 @@
-import { Color } from './colors';
+import { ColorInRGB } from './colors';
 
 const ColorThief = require('colorthief/dist/color-thief.umd.js');
 
@@ -21,7 +21,7 @@ export async function getImageSize(dataURL: string): Promise<ImageSize> {
   });
 }
 
-export async function getImageColor(dataURL: string): Promise<Color> {
+export async function getImageColor(dataURL: string): Promise<ColorInRGB> {
   return await new Promise((resolve, reject) => {
     try {
       const img = new Image();
