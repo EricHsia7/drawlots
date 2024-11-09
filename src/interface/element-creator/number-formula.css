@@ -1,0 +1,18 @@
+.css_element_creator_field .css_element_creator_body .css_element_creator_groups .css_element_creator_group[group="number-formula"] .css_element_creator_group_body input {
+  position: relative;
+  top: 0px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 50px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  color: var(--d-cssvar-000408);
+  caret-color: var(--d-cssvar-000408);
+  font-size: 20px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+}
