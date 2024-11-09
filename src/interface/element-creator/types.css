@@ -26,6 +26,7 @@
 
 /* highlighted: true */
 .css_element_creator_field .css_element_creator_body .css_element_creator_groups .css_element_creator_group[group="type"] .css_element_creator_group_body .css_element_creator_types .css_element_creator_type[highlighted="true"] {
-  background: var(--d-cssvar-ffffff);
+  background: var(--d-cssvar-ededf0);
   font-weight: 500;
+  box-shadow: 0px 0px 21px -13px rgba(0, 0, 0, 0.1);
 }
