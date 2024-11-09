@@ -91,13 +91,13 @@
 .css_library_field .css_library_body .css_library_sets .css_library_set .css_library_set_description {
   position: absolute;
   left: 80px;
-  top: 40px;
+  top: 45px;
   width: calc(100% - 80px - 10px);
-  height: 30px;
+  height: 25px;
   font-size: 15px;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--d-cssvar-000408);
   user-select: none;
   -webkit-user-select: none;
