@@ -37,7 +37,7 @@ import './interface/element-creator/field.css';
 import './interface/element-creator/head.css';
 import './interface/element-creator/body.css';
 import './interface/element-creator/groups.css';
-import './interface/element-creator/type.css';
+import './interface/element-creator/types.css';
 
 import './interface/draw-result/field.css';
 import './interface/draw-result/head.css';

@@ -1,0 +1,31 @@
+/* types */
+.css_element_creator_field .css_element_creator_body .css_element_creator_groups .css_element_creator_group[group="type"] .css_element_creator_group_body .css_element_creator_types {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+/* types > type */
+.css_element_creator_field .css_element_creator_body .css_element_creator_groups .css_element_creator_group[group="type"] .css_element_creator_group_body .css_element_creator_types .css_element_creator_type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+  color: var(--d-cssvar-000408);
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: var(--d-cssvar-border-radius-large);
+}
+
+/* highlighted: true */
+.css_element_creator_field .css_element_creator_body .css_element_creator_groups .css_element_creator_group[group="type"] .css_element_creator_group_body .css_element_creator_types .css_element_creator_type[highlighted="true"] {
+  background: var(--d-cssvar-ffffff);
+  font-weight: 500;
+}
