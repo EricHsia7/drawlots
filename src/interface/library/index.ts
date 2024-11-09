@@ -28,7 +28,7 @@ function generateSetElement(): GeneratedElement {
   const element = document.createElement('div');
   element.classList.add('css_library_set');
   element.id = id;
-  element.innerHTML = `<div class="css_library_set_thumbnail"></div><div class="css_library_set_name"></div>`;
+  element.innerHTML = `<div class="css_library_set_thumbnail"></div><div class="css_library_set_name"></div><div class="css_library_set_description"></div>`;
   element.setAttribute('onclick', `drawlots.sets.openSet('')`);
   return {
     id: id,
@@ -67,6 +67,11 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
     elementQuerySelector(element, '.css_library_set_name').innerText = set.name;
   }
 
+  function updateDescription(element: HTMLElement, set: SetObject): void {
+    const len = set.elements.length;
+    elementQuerySelector(element, '.css_library_set_description').innerText = `${len > 0 ? len : 'No'} element${len > 1 ? 's' : ''}`;
+  }
+
   function updateOnclick(element: HTMLElement, set: SetObject): void {
     element.setAttribute('onclick', `drawlots.sets.openSet('${set.id}')`);
   }
@@ -95,15 +100,17 @@ function updateLibraryField(sets: Array<SetObject>, skeletonScreen: boolean): vo
     const thisSetObject = sets[i];
     const thisSetElement = elementQuerySelectorAll(librarySetsElement, '.css_library_set')[i];
     if (previousSets.length < setsQuantity) {
-      updateThumbnail(thisSetElement, thisSetObject, skeletonScreen);
-      updateName(thisSetElement, thisSetObject, skeletonScreen);
-      updateOnclick(thisSetElement, thisSetObject, skeletonScreen);
+      updateThumbnail(thisSetElement, thisSetObject);
+      updateName(thisSetElement, thisSetObject);
+      updateDescription(thisSetElement, thisSetObject);
+      updateOnclick(thisSetElement, thisSetObject);
       updateSkeletonScreen(thisSetElement, skeletonScreen);
     } else {
       if (!(previousSets[i] === thisSetObject)) {
-        updateThumbnail(thisSetElement, thisSetObject, skeletonScreen);
-        updateName(thisSetElement, thisSetObject, skeletonScreen);
-        updateOnclick(thisSetElement, thisSetObject, skeletonScreen);
+        updateThumbnail(thisSetElement, thisSetObject);
+        updateName(thisSetElement, thisSetObject);
+        updateDescription(thisSetElement, thisSetObject);
+        updateOnclick(thisSetElement, thisSetObject);
         updateSkeletonScreen(thisSetElement, skeletonScreen);
       }
     }

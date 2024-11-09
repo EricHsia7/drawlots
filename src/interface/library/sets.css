@@ -86,3 +86,29 @@
   background: var(--d-cssvar-ededf0);
   border-radius: var(--d-cssvar-border-radius-large);
 }
+
+/* sets > set > description */
+.css_library_field .css_library_body .css_library_sets .css_library_set .css_library_set_description {
+  position: absolute;
+  left: 80px;
+  top: 40px;
+  width: calc(100% - 80px - 10px);
+  height: 30px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  color: var(--d-cssvar-000408);
+  user-select: none;
+  -webkit-user-select: none;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* skeleton screen: true */
+.css_library_field .css_library_body .css_library_sets .css_library_set[skeleton-screen="true"] .css_library_set_description {
+  color: rgba(0, 0, 0, 0);
+  background: var(--d-cssvar-ededf0);
+  border-radius: var(--d-cssvar-border-radius-large);
+}
